@@ -12,10 +12,11 @@ jobs:
             arch: x86_64
             cmake-arch: x64
             vcpkg-triplet: x64-linux
-          - os: ubuntu-latest
+          - os: linux
             arch: arm64
             cmake-arch: aarch64
             vcpkg-triplet: arm64-linux
+            runner-label: self-hosted
           - os: windows-latest
             arch: x86_64
             cmake-arch: x64
@@ -47,21 +48,10 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       run: |
         sudo apt-get update
-        sudo apt-get install -y build-essential cmake
-        
-    - name: Install Cross-Compilation Tools for ARM64
-      if: matrix.os == 'ubuntu-latest' && matrix.arch == 'arm64'
-      run: |
-        sudo apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu libasound2-dev:arm64 libpulse-dev:arm64
-
-    - name: Configure openal with CMake for ARM64 on Linux
-      if: matrix.os == 'ubuntu-latest' && matrix.arch == 'arm64'
-      run: |
-        cd openal
-        cmake -S ./ -B ./build -DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSTEM_PROCESSOR=aarch64 -DCMAKE_C_COMPILER=aarch64-linux-gnu-gcc -DCMAKE_CXX_COMPILER=aarch64-linux-gnu-g++
+        sudo apt-get install -y build-essential cmake libasound2-dev libpulse-dev
 
     - name: Configure openal with CMake on Linux (x86_64)
-      if: matrix.os == 'ubuntu-latest' && matrix.arch == 'x86_64'
+      if: matrix.os == 'ubuntu-latest' || matrix.os == 'linux'
       run: |
         cd openal
         cmake -S ./ -B ./build
