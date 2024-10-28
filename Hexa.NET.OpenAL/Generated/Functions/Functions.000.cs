@@ -219,6 +219,17 @@ namespace Hexa.NET.OpenAL
 		}
 
 		/// <summary>
+		/// Context state retrieval. <br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alGetString")]
+		[return: NativeName(NativeNameType.Type, "const ALchar*")]
+		public static string GetStringS([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param)
+		{
+			string ret = Utils.DecodeStringUTF8(GetStringNative(param));
+			return ret;
+		}
+
+		/// <summary>
 		/// To be documented.
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBooleanv")]
@@ -253,6 +264,38 @@ namespace Hexa.NET.OpenAL
 			fixed (byte* pvalues = &values)
 			{
 				GetBooleanvNative(param, (byte*)pvalues);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alGetBooleanv")]
+		[return: NativeName(NativeNameType.Type, "void")]
+		public static void GetBooleanv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALboolean*")] ref string values)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (values != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(values);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(values, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			GetBooleanvNative(param, pStr0);
+			values = Utils.DecodeStringUTF8(pStr0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
 			}
 		}
 
@@ -543,6 +586,52 @@ namespace Hexa.NET.OpenAL
 		}
 
 		/// <summary>
+		/// Query for the presence of an extension on the AL context. <br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alIsExtensionPresent")]
+		[return: NativeName(NativeNameType.Type, "ALboolean")]
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALchar*")] ReadOnlySpan<byte> extname)
+		{
+			fixed (byte* pextname = extname)
+			{
+				byte ret = IsExtensionPresentNative((byte*)pextname);
+				return ret;
+			}
+		}
+
+		/// <summary>
+		/// Query for the presence of an extension on the AL context. <br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alIsExtensionPresent")]
+		[return: NativeName(NativeNameType.Type, "ALboolean")]
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALchar*")] string extname)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (extname != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(extname);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(extname, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			byte ret = IsExtensionPresentNative(pStr0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+			return ret;
+		}
+
+		/// <summary>
 		/// Retrieve the address of a function. The returned function may be context-<br/>
 		/// specific.<br/>
 		/// </summary>
@@ -586,6 +675,54 @@ namespace Hexa.NET.OpenAL
 		}
 
 		/// <summary>
+		/// Retrieve the address of a function. The returned function may be context-<br/>
+		/// specific.<br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alGetProcAddress")]
+		[return: NativeName(NativeNameType.Type, "void*")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "const ALchar*")] ReadOnlySpan<byte> fname)
+		{
+			fixed (byte* pfname = fname)
+			{
+				void* ret = GetProcAddressNative((byte*)pfname);
+				return ret;
+			}
+		}
+
+		/// <summary>
+		/// Retrieve the address of a function. The returned function may be context-<br/>
+		/// specific.<br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alGetProcAddress")]
+		[return: NativeName(NativeNameType.Type, "void*")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "const ALchar*")] string fname)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (fname != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(fname);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(fname, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			void* ret = GetProcAddressNative(pStr0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+			return ret;
+		}
+
+		/// <summary>
 		/// Retrieve the value of an enum. The returned value may be context-specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetEnumValue")]
@@ -623,6 +760,52 @@ namespace Hexa.NET.OpenAL
 				int ret = GetEnumValueNative((byte*)pename);
 				return ret;
 			}
+		}
+
+		/// <summary>
+		/// Retrieve the value of an enum. The returned value may be context-specific.<br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alGetEnumValue")]
+		[return: NativeName(NativeNameType.Type, "ALenum")]
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "const ALchar*")] ReadOnlySpan<byte> ename)
+		{
+			fixed (byte* pename = ename)
+			{
+				int ret = GetEnumValueNative((byte*)pename);
+				return ret;
+			}
+		}
+
+		/// <summary>
+		/// Retrieve the value of an enum. The returned value may be context-specific.<br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alGetEnumValue")]
+		[return: NativeName(NativeNameType.Type, "ALenum")]
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "const ALchar*")] string ename)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (ename != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(ename);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(ename, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			int ret = GetEnumValueNative(pStr0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+			return ret;
 		}
 
 		/// <summary>
@@ -2974,9 +3157,9 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCreateContext")]
 		[return: NativeName(NativeNameType.Type, "ALCcontext*")]
-		public static ALCcontext* CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] int* attrlist)
+		public static ALCcontextPtr CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] int* attrlist)
 		{
-			ALCcontext* ret = CreateContextNative(device, attrlist);
+			ALCcontextPtr ret = CreateContextNative(device, attrlist);
 			return ret;
 		}
 
@@ -2985,11 +3168,11 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCreateContext")]
 		[return: NativeName(NativeNameType.Type, "ALCcontext*")]
-		public static ALCcontext* CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] int* attrlist)
+		public static ALCcontextPtr CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] int* attrlist)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
-				ALCcontext* ret = CreateContextNative((ALCdevice*)pdevice, attrlist);
+				ALCcontextPtr ret = CreateContextNative((ALCdevice*)pdevice, attrlist);
 				return ret;
 			}
 		}
@@ -2999,11 +3182,11 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCreateContext")]
 		[return: NativeName(NativeNameType.Type, "ALCcontext*")]
-		public static ALCcontext* CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] ref int attrlist)
+		public static ALCcontextPtr CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] ref int attrlist)
 		{
 			fixed (int* pattrlist = &attrlist)
 			{
-				ALCcontext* ret = CreateContextNative(device, (int*)pattrlist);
+				ALCcontextPtr ret = CreateContextNative(device, (int*)pattrlist);
 				return ret;
 			}
 		}
@@ -3013,13 +3196,13 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCreateContext")]
 		[return: NativeName(NativeNameType.Type, "ALCcontext*")]
-		public static ALCcontext* CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] ref int attrlist)
+		public static ALCcontextPtr CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] ref int attrlist)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
 				fixed (int* pattrlist = &attrlist)
 				{
-					ALCcontext* ret = CreateContextNative((ALCdevice*)pdevice, (int*)pattrlist);
+					ALCcontextPtr ret = CreateContextNative((ALCdevice*)pdevice, (int*)pattrlist);
 					return ret;
 				}
 			}
@@ -3047,7 +3230,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcMakeContextCurrent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte MakeContextCurrent([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context)
+		public static byte MakeContextCurrent([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontextPtr context)
 		{
 			byte ret = MakeContextCurrentNative(context);
 			return ret;
@@ -3088,7 +3271,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcProcessContext")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void ProcessContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context)
+		public static void ProcessContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontextPtr context)
 		{
 			ProcessContextNative(context);
 		}
@@ -3126,7 +3309,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcSuspendContext")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SuspendContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context)
+		public static void SuspendContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontextPtr context)
 		{
 			SuspendContextNative(context);
 		}
@@ -3164,7 +3347,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcDestroyContext")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void DestroyContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context)
+		public static void DestroyContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontextPtr context)
 		{
 			DestroyContextNative(context);
 		}
@@ -3202,9 +3385,9 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetCurrentContext")]
 		[return: NativeName(NativeNameType.Type, "ALCcontext*")]
-		public static ALCcontext* GetCurrentContext()
+		public static ALCcontextPtr GetCurrentContext()
 		{
-			ALCcontext* ret = GetCurrentContextNative();
+			ALCcontextPtr ret = GetCurrentContextNative();
 			return ret;
 		}
 
@@ -3228,9 +3411,9 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetContextsDevice")]
 		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevice* GetContextsDevice([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context)
+		public static ALCdevicePtr GetContextsDevice([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontextPtr context)
 		{
-			ALCdevice* ret = GetContextsDeviceNative(context);
+			ALCdevicePtr ret = GetContextsDeviceNative(context);
 			return ret;
 		}
 
@@ -3239,11 +3422,11 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetContextsDevice")]
 		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevice* GetContextsDevice([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ref ALCcontext context)
+		public static ALCdevicePtr GetContextsDevice([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ref ALCcontext context)
 		{
 			fixed (ALCcontext* pcontext = &context)
 			{
-				ALCdevice* ret = GetContextsDeviceNative((ALCcontext*)pcontext);
+				ALCdevicePtr ret = GetContextsDeviceNative((ALCcontext*)pcontext);
 				return ret;
 			}
 		}
@@ -3268,9 +3451,9 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcOpenDevice")]
 		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevice* OpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* devicename)
+		public static ALCdevicePtr OpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* devicename)
 		{
-			ALCdevice* ret = OpenDeviceNative(devicename);
+			ALCdevicePtr ret = OpenDeviceNative(devicename);
 			return ret;
 		}
 
@@ -3279,13 +3462,59 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcOpenDevice")]
 		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevice* OpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte devicename)
+		public static ALCdevicePtr OpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte devicename)
 		{
 			fixed (byte* pdevicename = &devicename)
 			{
-				ALCdevice* ret = OpenDeviceNative((byte*)pdevicename);
+				ALCdevicePtr ret = OpenDeviceNative((byte*)pdevicename);
 				return ret;
 			}
+		}
+
+		/// <summary>
+		/// Opens the named playback device. <br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcOpenDevice")]
+		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
+		public static ALCdevicePtr OpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> devicename)
+		{
+			fixed (byte* pdevicename = devicename)
+			{
+				ALCdevicePtr ret = OpenDeviceNative((byte*)pdevicename);
+				return ret;
+			}
+		}
+
+		/// <summary>
+		/// Opens the named playback device. <br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcOpenDevice")]
+		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
+		public static ALCdevicePtr OpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] string devicename)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (devicename != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(devicename);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(devicename, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			ALCdevicePtr ret = OpenDeviceNative(pStr0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+			return ret;
 		}
 
 		/// <summary>
@@ -3308,7 +3537,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCloseDevice")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte CloseDevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device)
+		public static byte CloseDevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device)
 		{
 			byte ret = CloseDeviceNative(device);
 			return ret;
@@ -3350,7 +3579,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetError")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
-		public static int GetError([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device)
+		public static int GetError([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device)
 		{
 			int ret = GetErrorNative(device);
 			return ret;
@@ -3391,7 +3620,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* extname)
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* extname)
 		{
 			byte ret = IsExtensionPresentNative(device, extname);
 			return ret;
@@ -3416,13 +3645,59 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte extname)
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte extname)
 		{
 			fixed (byte* pextname = &extname)
 			{
 				byte ret = IsExtensionPresentNative(device, (byte*)pextname);
 				return ret;
 			}
+		}
+
+		/// <summary>
+		/// Query for the presence of an extension on the AL context. <br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
+		[return: NativeName(NativeNameType.Type, "ALCboolean")]
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> extname)
+		{
+			fixed (byte* pextname = extname)
+			{
+				byte ret = IsExtensionPresentNative(device, (byte*)pextname);
+				return ret;
+			}
+		}
+
+		/// <summary>
+		/// Query for the presence of an extension on the AL context. <br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
+		[return: NativeName(NativeNameType.Type, "ALCboolean")]
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] string extname)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (extname != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(extname);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(extname, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			byte ret = IsExtensionPresentNative(device, pStr0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+			return ret;
 		}
 
 		/// <summary>
@@ -3439,6 +3714,58 @@ namespace Hexa.NET.OpenAL
 					byte ret = IsExtensionPresentNative((ALCdevice*)pdevice, (byte*)pextname);
 					return ret;
 				}
+			}
+		}
+
+		/// <summary>
+		/// Query for the presence of an extension on the AL context. <br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
+		[return: NativeName(NativeNameType.Type, "ALCboolean")]
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> extname)
+		{
+			fixed (ALCdevice* pdevice = &device)
+			{
+				fixed (byte* pextname = extname)
+				{
+					byte ret = IsExtensionPresentNative((ALCdevice*)pdevice, (byte*)pextname);
+					return ret;
+				}
+			}
+		}
+
+		/// <summary>
+		/// Query for the presence of an extension on the AL context. <br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
+		[return: NativeName(NativeNameType.Type, "ALCboolean")]
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] string extname)
+		{
+			fixed (ALCdevice* pdevice = &device)
+			{
+				byte* pStr0 = null;
+				int pStrSize0 = 0;
+				if (extname != null)
+				{
+					pStrSize0 = Utils.GetByteCountUTF8(extname);
+					if (pStrSize0 >= Utils.MaxStackallocSize)
+					{
+						pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+					}
+					else
+					{
+						byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+						pStr0 = pStrStack0;
+					}
+					int pStrOffset0 = Utils.EncodeStringUTF8(extname, pStr0, pStrSize0);
+					pStr0[pStrOffset0] = 0;
+				}
+				byte ret = IsExtensionPresentNative((ALCdevice*)pdevice, pStr0);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					Utils.Free(pStr0);
+				}
+				return ret;
 			}
 		}
 
@@ -3464,7 +3791,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
 		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
-		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* funcname)
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* funcname)
 		{
 			void* ret = GetProcAddressNative(device, funcname);
 			return ret;
@@ -3491,13 +3818,61 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
 		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
-		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte funcname)
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte funcname)
 		{
 			fixed (byte* pfuncname = &funcname)
 			{
 				void* ret = GetProcAddressNative(device, (byte*)pfuncname);
 				return ret;
 			}
+		}
+
+		/// <summary>
+		/// Retrieve the address of a function. The returned function may be context-<br/>
+		/// specific.<br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
+		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> funcname)
+		{
+			fixed (byte* pfuncname = funcname)
+			{
+				void* ret = GetProcAddressNative(device, (byte*)pfuncname);
+				return ret;
+			}
+		}
+
+		/// <summary>
+		/// Retrieve the address of a function. The returned function may be context-<br/>
+		/// specific.<br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
+		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] string funcname)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (funcname != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(funcname);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(funcname, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			void* ret = GetProcAddressNative(device, pStr0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+			return ret;
 		}
 
 		/// <summary>
@@ -3515,6 +3890,60 @@ namespace Hexa.NET.OpenAL
 					void* ret = GetProcAddressNative((ALCdevice*)pdevice, (byte*)pfuncname);
 					return ret;
 				}
+			}
+		}
+
+		/// <summary>
+		/// Retrieve the address of a function. The returned function may be context-<br/>
+		/// specific.<br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
+		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> funcname)
+		{
+			fixed (ALCdevice* pdevice = &device)
+			{
+				fixed (byte* pfuncname = funcname)
+				{
+					void* ret = GetProcAddressNative((ALCdevice*)pdevice, (byte*)pfuncname);
+					return ret;
+				}
+			}
+		}
+
+		/// <summary>
+		/// Retrieve the address of a function. The returned function may be context-<br/>
+		/// specific.<br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
+		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] string funcname)
+		{
+			fixed (ALCdevice* pdevice = &device)
+			{
+				byte* pStr0 = null;
+				int pStrSize0 = 0;
+				if (funcname != null)
+				{
+					pStrSize0 = Utils.GetByteCountUTF8(funcname);
+					if (pStrSize0 >= Utils.MaxStackallocSize)
+					{
+						pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+					}
+					else
+					{
+						byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+						pStr0 = pStrStack0;
+					}
+					int pStrOffset0 = Utils.EncodeStringUTF8(funcname, pStr0, pStrSize0);
+					pStr0[pStrOffset0] = 0;
+				}
+				void* ret = GetProcAddressNative((ALCdevice*)pdevice, pStr0);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					Utils.Free(pStr0);
+				}
+				return ret;
 			}
 		}
 
@@ -3538,7 +3967,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
-		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* enumname)
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* enumname)
 		{
 			int ret = GetEnumValueNative(device, enumname);
 			return ret;
@@ -3563,13 +3992,59 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
-		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte enumname)
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte enumname)
 		{
 			fixed (byte* penumname = &enumname)
 			{
 				int ret = GetEnumValueNative(device, (byte*)penumname);
 				return ret;
 			}
+		}
+
+		/// <summary>
+		/// Retrieve the value of an enum. The returned value may be context-specific.<br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
+		[return: NativeName(NativeNameType.Type, "ALCenum")]
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> enumname)
+		{
+			fixed (byte* penumname = enumname)
+			{
+				int ret = GetEnumValueNative(device, (byte*)penumname);
+				return ret;
+			}
+		}
+
+		/// <summary>
+		/// Retrieve the value of an enum. The returned value may be context-specific.<br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
+		[return: NativeName(NativeNameType.Type, "ALCenum")]
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] string enumname)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (enumname != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(enumname);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(enumname, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			int ret = GetEnumValueNative(device, pStr0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+			return ret;
 		}
 
 		/// <summary>
@@ -3586,6 +4061,58 @@ namespace Hexa.NET.OpenAL
 					int ret = GetEnumValueNative((ALCdevice*)pdevice, (byte*)penumname);
 					return ret;
 				}
+			}
+		}
+
+		/// <summary>
+		/// Retrieve the value of an enum. The returned value may be context-specific.<br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
+		[return: NativeName(NativeNameType.Type, "ALCenum")]
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> enumname)
+		{
+			fixed (ALCdevice* pdevice = &device)
+			{
+				fixed (byte* penumname = enumname)
+				{
+					int ret = GetEnumValueNative((ALCdevice*)pdevice, (byte*)penumname);
+					return ret;
+				}
+			}
+		}
+
+		/// <summary>
+		/// Retrieve the value of an enum. The returned value may be context-specific.<br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
+		[return: NativeName(NativeNameType.Type, "ALCenum")]
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] string enumname)
+		{
+			fixed (ALCdevice* pdevice = &device)
+			{
+				byte* pStr0 = null;
+				int pStrSize0 = 0;
+				if (enumname != null)
+				{
+					pStrSize0 = Utils.GetByteCountUTF8(enumname);
+					if (pStrSize0 >= Utils.MaxStackallocSize)
+					{
+						pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+					}
+					else
+					{
+						byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+						pStr0 = pStrStack0;
+					}
+					int pStrOffset0 = Utils.EncodeStringUTF8(enumname, pStr0, pStrSize0);
+					pStr0[pStrOffset0] = 0;
+				}
+				int ret = GetEnumValueNative((ALCdevice*)pdevice, pStr0);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					Utils.Free(pStr0);
+				}
+				return ret;
 			}
 		}
 
@@ -3609,9 +4136,20 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetString")]
 		[return: NativeName(NativeNameType.Type, "const ALCchar*")]
-		public static byte* GetString([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param)
+		public static byte* GetString([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param)
 		{
 			byte* ret = GetStringNative(device, param);
+			return ret;
+		}
+
+		/// <summary>
+		/// Context state retrieval. <br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcGetString")]
+		[return: NativeName(NativeNameType.Type, "const ALCchar*")]
+		public static string GetStringS([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param)
+		{
+			string ret = Utils.DecodeStringUTF8(GetStringNative(device, param));
 			return ret;
 		}
 
@@ -3625,6 +4163,20 @@ namespace Hexa.NET.OpenAL
 			fixed (ALCdevice* pdevice = &device)
 			{
 				byte* ret = GetStringNative((ALCdevice*)pdevice, param);
+				return ret;
+			}
+		}
+
+		/// <summary>
+		/// Context state retrieval. <br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcGetString")]
+		[return: NativeName(NativeNameType.Type, "const ALCchar*")]
+		public static string GetStringS([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param)
+		{
+			fixed (ALCdevice* pdevice = &device)
+			{
+				string ret = Utils.DecodeStringUTF8(GetStringNative((ALCdevice*)pdevice, param));
 				return ret;
 			}
 		}
@@ -3649,7 +4201,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetIntegerv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetIntegerv([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint*")] int* values)
+		public static void GetIntegerv([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint*")] int* values)
 		{
 			GetIntegervNative(device, param, size, values);
 		}
@@ -3672,7 +4224,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetIntegerv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetIntegerv([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint*")] ref int values)
+		public static void GetIntegerv([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint*")] ref int values)
 		{
 			fixed (int* pvalues = &values)
 			{
@@ -3718,9 +4270,9 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureOpenDevice")]
 		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevice* CaptureOpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
+		public static ALCdevicePtr CaptureOpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
 		{
-			ALCdevice* ret = CaptureOpenDeviceNative(devicename, frequency, format, buffersize);
+			ALCdevicePtr ret = CaptureOpenDeviceNative(devicename, frequency, format, buffersize);
 			return ret;
 		}
 
@@ -3730,13 +4282,61 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureOpenDevice")]
 		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevice* CaptureOpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
+		public static ALCdevicePtr CaptureOpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
 		{
 			fixed (byte* pdevicename = &devicename)
 			{
-				ALCdevice* ret = CaptureOpenDeviceNative((byte*)pdevicename, frequency, format, buffersize);
+				ALCdevicePtr ret = CaptureOpenDeviceNative((byte*)pdevicename, frequency, format, buffersize);
 				return ret;
 			}
+		}
+
+		/// <summary>
+		/// Opens the named capture device with the given frequency, format, and buffer<br/>
+		/// size.<br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcCaptureOpenDevice")]
+		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
+		public static ALCdevicePtr CaptureOpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
+		{
+			fixed (byte* pdevicename = devicename)
+			{
+				ALCdevicePtr ret = CaptureOpenDeviceNative((byte*)pdevicename, frequency, format, buffersize);
+				return ret;
+			}
+		}
+
+		/// <summary>
+		/// Opens the named capture device with the given frequency, format, and buffer<br/>
+		/// size.<br/>
+		/// </summary>
+		[NativeName(NativeNameType.Func, "alcCaptureOpenDevice")]
+		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
+		public static ALCdevicePtr CaptureOpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] string devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (devicename != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(devicename);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(devicename, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			ALCdevicePtr ret = CaptureOpenDeviceNative(pStr0, frequency, format, buffersize);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+			return ret;
 		}
 
 		/// <summary>
@@ -3759,7 +4359,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureCloseDevice")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte CaptureCloseDevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device)
+		public static byte CaptureCloseDevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device)
 		{
 			byte ret = CaptureCloseDeviceNative(device);
 			return ret;
@@ -3799,7 +4399,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureStart")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void CaptureStart([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device)
+		public static void CaptureStart([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device)
 		{
 			CaptureStartNative(device);
 		}
@@ -3837,7 +4437,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureStop")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void CaptureStop([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device)
+		public static void CaptureStop([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device)
 		{
 			CaptureStopNative(device);
 		}
@@ -3875,7 +4475,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureSamples")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void CaptureSamples([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALCvoid*")] void* buffer, [NativeName(NativeNameType.Param, "samples")] [NativeName(NativeNameType.Type, "ALCsizei")] int samples)
+		public static void CaptureSamples([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALCvoid*")] void* buffer, [NativeName(NativeNameType.Param, "samples")] [NativeName(NativeNameType.Type, "ALCsizei")] int samples)
 		{
 			CaptureSamplesNative(device, buffer, samples);
 		}

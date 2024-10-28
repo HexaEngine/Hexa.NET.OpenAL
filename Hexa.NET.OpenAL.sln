@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexa.NET.OpenAL", "Hexa.NET
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generator", "Generator\Generator.csproj", "{B1DB7A8E-9847-4B53-A55D-3EFCE2B15215}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{315E21B9-3CB8-4113-9FC3-C5E514CE665A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B1DB7A8E-9847-4B53-A55D-3EFCE2B15215}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1DB7A8E-9847-4B53-A55D-3EFCE2B15215}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1DB7A8E-9847-4B53-A55D-3EFCE2B15215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{315E21B9-3CB8-4113-9FC3-C5E514CE665A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{315E21B9-3CB8-4113-9FC3-C5E514CE665A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{315E21B9-3CB8-4113-9FC3-C5E514CE665A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{315E21B9-3CB8-4113-9FC3-C5E514CE665A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

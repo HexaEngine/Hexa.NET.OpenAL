@@ -26,4 +26,48 @@ namespace Hexa.NET.OpenAL
 
 	}
 
+	/// <summary>
+	/// Opaque context handle <br/>
+	/// </summary>
+	[NativeName(NativeNameType.Typedef, "ALCcontext")]
+	#if NET5_0_OR_GREATER
+	[DebuggerDisplay("{DebuggerDisplay,nq}")]
+	#endif
+	public unsafe struct ALCcontextPtr : IEquatable<ALCcontextPtr>
+	{
+		public ALCcontextPtr(ALCcontext* handle) { Handle = handle; }
+
+		public ALCcontext* Handle;
+
+		public bool IsNull => Handle == null;
+
+		public static ALCcontextPtr Null => new ALCcontextPtr(null);
+
+		public ALCcontext this[int index] { get => Handle[index]; set => Handle[index] = value; }
+
+		public static implicit operator ALCcontextPtr(ALCcontext* handle) => new ALCcontextPtr(handle);
+
+		public static implicit operator ALCcontext*(ALCcontextPtr handle) => handle.Handle;
+
+		public static bool operator ==(ALCcontextPtr left, ALCcontextPtr right) => left.Handle == right.Handle;
+
+		public static bool operator !=(ALCcontextPtr left, ALCcontextPtr right) => left.Handle != right.Handle;
+
+		public static bool operator ==(ALCcontextPtr left, ALCcontext* right) => left.Handle == right;
+
+		public static bool operator !=(ALCcontextPtr left, ALCcontext* right) => left.Handle != right;
+
+		public bool Equals(ALCcontextPtr other) => Handle == other.Handle;
+
+		/// <inheritdoc/>
+		public override bool Equals(object obj) => obj is ALCcontextPtr handle && Equals(handle);
+
+		/// <inheritdoc/>
+		public override int GetHashCode() => ((nuint)Handle).GetHashCode();
+
+		#if NET5_0_OR_GREATER
+		private string DebuggerDisplay => string.Format("ALCcontextPtr [0x{0}]", ((nuint)Handle).ToString("X"));
+		#endif
+	}
+
 }
