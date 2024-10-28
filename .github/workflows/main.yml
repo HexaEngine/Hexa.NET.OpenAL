@@ -1,4 +1,4 @@
-name: Build openal Libraries
+name: Build OpenAL Soft Libraries
 
 on: [workflow_dispatch]
 
@@ -44,31 +44,31 @@ jobs:
         path: 'openal'
         submodules: true
 
-    - name: Install dependencies on Ubuntu
-      if: matrix.os == 'ubuntu-latest'
+    - name: Install dependencies on Linux
+      if: matrix.os == 'ubuntu-latest' || matrix.os == 'linux'
       run: |
         sudo apt-get update
         sudo apt-get install -y build-essential cmake libasound2-dev libpulse-dev
 
-    - name: Configure openal with CMake on Linux (x86_64)
+    - name: Configure OpenAL Soft with CMake on Linux
       if: matrix.os == 'ubuntu-latest' || matrix.os == 'linux'
       run: |
         cd openal
         cmake -S ./ -B ./build
 
-    - name: Configure openal with CMake for macOS
+    - name: Configure OpenAL Soft with CMake for macOS
       if: matrix.os == 'macos-latest'
       run: | 
         cd openal
         cmake -S ./ -B ./build -DCMAKE_OSX_ARCHITECTURES=${{ matrix.cmake-arch }}
 
-    - name: Configure openal with CMake for Windows
+    - name: Configure OpenAL Soft with CMake for Windows
       if: matrix.os == 'windows-latest'
       run: | 
         cd openal
         cmake -S ./ -B ./build -A ${{ matrix.cmake-arch }}
 
-    - name: Build openal
+    - name: Build OpenAL Soft
       run: cmake --build openal/build --config Release
 
     - name: Move Windows binaries
