@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexa.NET.OpenAL", "Hexa.NET.OpenAL\Hexa.NET.OpenAL.csproj", "{27BBE7DC-BCC5-4535-AD59-3C1F01F06954}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generator", "Generator\Generator.csproj", "{B1DB7A8E-9847-4B53-A55D-3EFCE2B15215}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27BBE7DC-BCC5-4535-AD59-3C1F01F06954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27BBE7DC-BCC5-4535-AD59-3C1F01F06954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27BBE7DC-BCC5-4535-AD59-3C1F01F06954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27BBE7DC-BCC5-4535-AD59-3C1F01F06954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1DB7A8E-9847-4B53-A55D-3EFCE2B15215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1DB7A8E-9847-4B53-A55D-3EFCE2B15215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1DB7A8E-9847-4B53-A55D-3EFCE2B15215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1DB7A8E-9847-4B53-A55D-3EFCE2B15215}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DF65713-A4F2-4687-9CF1-CE61D0DD955F}
+	EndGlobalSection
+EndGlobal
