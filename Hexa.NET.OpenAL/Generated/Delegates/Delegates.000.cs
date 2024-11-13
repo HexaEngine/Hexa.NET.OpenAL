@@ -22,7 +22,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALENABLE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALENABLE([NativeName(NativeNameType.Param, "capability")] [NativeName(NativeNameType.Type, "ALenum")] int capability);
+	public unsafe delegate void Lpalenable([NativeName(NativeNameType.Param, "capability")] [NativeName(NativeNameType.Type, "ALenum")] int capability);
 
 	#else
 	/// <summary>
@@ -31,7 +31,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALENABLE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALENABLE([NativeName(NativeNameType.Param, "capability")] [NativeName(NativeNameType.Type, "ALenum")] int capability);
+	public unsafe delegate void Lpalenable([NativeName(NativeNameType.Param, "capability")] [NativeName(NativeNameType.Type, "ALenum")] int capability);
 
 	#endif
 
@@ -41,7 +41,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDISABLE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDISABLE([NativeName(NativeNameType.Param, "capability")] [NativeName(NativeNameType.Type, "ALenum")] int capability);
+	public unsafe delegate void Lpaldisable([NativeName(NativeNameType.Param, "capability")] [NativeName(NativeNameType.Type, "ALenum")] int capability);
 
 	#else
 	/// <summary>
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDISABLE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDISABLE([NativeName(NativeNameType.Param, "capability")] [NativeName(NativeNameType.Type, "ALenum")] int capability);
+	public unsafe delegate void Lpaldisable([NativeName(NativeNameType.Param, "capability")] [NativeName(NativeNameType.Type, "ALenum")] int capability);
 
 	#endif
 
@@ -59,7 +59,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISENABLED")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISENABLED([NativeName(NativeNameType.Param, "capability")] [NativeName(NativeNameType.Type, "ALenum")] int capability);
+	public unsafe delegate byte Lpalisenabled([NativeName(NativeNameType.Param, "capability")] [NativeName(NativeNameType.Type, "ALenum")] int capability);
 
 	#else
 	/// <summary>
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISENABLED")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISENABLED([NativeName(NativeNameType.Param, "capability")] [NativeName(NativeNameType.Type, "ALenum")] int capability);
+	public unsafe delegate byte Lpalisenabled([NativeName(NativeNameType.Param, "capability")] [NativeName(NativeNameType.Type, "ALenum")] int capability);
 
 	#endif
 
@@ -77,7 +77,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSTRING")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte* LPALGETSTRING([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
+	public unsafe delegate byte* Lpalgetstring([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
 
 	#else
 	/// <summary>
@@ -85,7 +85,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSTRING")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate nint LPALGETSTRING([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
+	public unsafe delegate nint Lpalgetstring([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
 
 	#endif
 
@@ -95,7 +95,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBOOLEANV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBOOLEANV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALboolean*")] byte* values);
+	public unsafe delegate void Lpalgetbooleanv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALboolean *")] byte* values);
 
 	#else
 	/// <summary>
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBOOLEANV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBOOLEANV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALboolean*")] nint values);
+	public unsafe delegate void Lpalgetbooleanv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALboolean *")] nint values);
 
 	#endif
 
@@ -113,7 +113,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETINTEGERV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETINTEGERV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] int* values);
+	public unsafe delegate void Lpalgetintegerv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] int* values);
 
 	#else
 	/// <summary>
@@ -121,7 +121,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETINTEGERV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETINTEGERV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] nint values);
+	public unsafe delegate void Lpalgetintegerv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] nint values);
 
 	#endif
 
@@ -131,7 +131,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETFLOATV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETFLOATV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] float* values);
+	public unsafe delegate void Lpalgetfloatv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] float* values);
 
 	#else
 	/// <summary>
@@ -139,7 +139,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETFLOATV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETFLOATV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] nint values);
+	public unsafe delegate void Lpalgetfloatv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] nint values);
 
 	#endif
 
@@ -149,7 +149,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETDOUBLEV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETDOUBLEV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALdouble*")] double* values);
+	public unsafe delegate void Lpalgetdoublev([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALdouble *")] double* values);
 
 	#else
 	/// <summary>
@@ -157,7 +157,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETDOUBLEV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETDOUBLEV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALdouble*")] nint values);
+	public unsafe delegate void Lpalgetdoublev([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALdouble *")] nint values);
 
 	#endif
 
@@ -167,7 +167,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBOOLEAN")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALGETBOOLEAN([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
+	public unsafe delegate byte Lpalgetboolean([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
 
 	#else
 	/// <summary>
@@ -175,7 +175,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBOOLEAN")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALGETBOOLEAN([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
+	public unsafe delegate byte Lpalgetboolean([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
 
 	#endif
 
@@ -185,7 +185,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETINTEGER")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate int LPALGETINTEGER([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
+	public unsafe delegate int Lpalgetinteger([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
 
 	#else
 	/// <summary>
@@ -193,7 +193,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETINTEGER")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate int LPALGETINTEGER([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
+	public unsafe delegate int Lpalgetinteger([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
 
 	#endif
 
@@ -203,7 +203,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETFLOAT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate float LPALGETFLOAT([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
+	public unsafe delegate float Lpalgetfloat([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
 
 	#else
 	/// <summary>
@@ -211,7 +211,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETFLOAT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate float LPALGETFLOAT([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
+	public unsafe delegate float Lpalgetfloat([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
 
 	#endif
 
@@ -221,7 +221,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETDOUBLE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate double LPALGETDOUBLE([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
+	public unsafe delegate double Lpalgetdouble([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
 
 	#else
 	/// <summary>
@@ -229,7 +229,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETDOUBLE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate double LPALGETDOUBLE([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
+	public unsafe delegate double Lpalgetdouble([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param);
 
 	#endif
 
@@ -239,7 +239,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETERROR")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate int LPALGETERROR();
+	public unsafe delegate int Lpalgeterror();
 
 	#else
 	/// <summary>
@@ -247,7 +247,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETERROR")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate int LPALGETERROR();
+	public unsafe delegate int Lpalgeterror();
 
 	#endif
 
@@ -257,7 +257,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISEXTENSIONPRESENT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISEXTENSIONPRESENT([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALchar*")] byte* extname);
+	public unsafe delegate byte Lpalisextensionpresent([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALchar const *")] byte* extname);
 
 	#else
 	/// <summary>
@@ -265,7 +265,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISEXTENSIONPRESENT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISEXTENSIONPRESENT([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALchar*")] nint extname);
+	public unsafe delegate byte Lpalisextensionpresent([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALchar const *")] nint extname);
 
 	#endif
 
@@ -275,7 +275,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETPROCADDRESS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void* LPALGETPROCADDRESS([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "const ALchar*")] byte* fname);
+	public unsafe delegate void* Lpalgetprocaddress([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "ALchar const *")] byte* fname);
 
 	#else
 	/// <summary>
@@ -283,7 +283,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETPROCADDRESS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate nint LPALGETPROCADDRESS([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "const ALchar*")] nint fname);
+	public unsafe delegate nint Lpalgetprocaddress([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "ALchar const *")] nint fname);
 
 	#endif
 
@@ -293,7 +293,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETENUMVALUE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate int LPALGETENUMVALUE([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "const ALchar*")] byte* ename);
+	public unsafe delegate int Lpalgetenumvalue([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "ALchar const *")] byte* ename);
 
 	#else
 	/// <summary>
@@ -301,7 +301,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETENUMVALUE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate int LPALGETENUMVALUE([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "const ALchar*")] nint ename);
+	public unsafe delegate int Lpalgetenumvalue([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "ALchar const *")] nint ename);
 
 	#endif
 
@@ -311,7 +311,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALLISTENERF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALLISTENERF([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
+	public unsafe delegate void Lpallistenerf([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
 
 	#else
 	/// <summary>
@@ -319,7 +319,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALLISTENERF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALLISTENERF([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
+	public unsafe delegate void Lpallistenerf([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
 
 	#endif
 
@@ -329,7 +329,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALLISTENER3F")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALLISTENER3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat")] float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat")] float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat")] float value3);
+	public unsafe delegate void Lpallistener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat")] float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat")] float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat")] float value3);
 
 	#else
 	/// <summary>
@@ -337,7 +337,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALLISTENER3F")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALLISTENER3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat")] float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat")] float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat")] float value3);
+	public unsafe delegate void Lpallistener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat")] float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat")] float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat")] float value3);
 
 	#endif
 
@@ -347,7 +347,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALLISTENERFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALLISTENERFV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] float* values);
+	public unsafe delegate void Lpallistenerfv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] float* values);
 
 	#else
 	/// <summary>
@@ -355,7 +355,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALLISTENERFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALLISTENERFV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] nint values);
+	public unsafe delegate void Lpallistenerfv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] nint values);
 
 	#endif
 
@@ -365,7 +365,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALLISTENERI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALLISTENERI([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint")] int value);
+	public unsafe delegate void Lpallisteneri([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint")] int value);
 
 	#else
 	/// <summary>
@@ -373,7 +373,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALLISTENERI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALLISTENERI([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint")] int value);
+	public unsafe delegate void Lpallisteneri([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint")] int value);
 
 	#endif
 
@@ -383,7 +383,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALLISTENER3I")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALLISTENER3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint")] int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint")] int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint")] int value3);
+	public unsafe delegate void Lpallistener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint")] int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint")] int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint")] int value3);
 
 	#else
 	/// <summary>
@@ -391,7 +391,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALLISTENER3I")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALLISTENER3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint")] int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint")] int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint")] int value3);
+	public unsafe delegate void Lpallistener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint")] int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint")] int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint")] int value3);
 
 	#endif
 
@@ -401,7 +401,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALLISTENERIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALLISTENERIV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] int* values);
+	public unsafe delegate void Lpallisteneriv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] int* values);
 
 	#else
 	/// <summary>
@@ -409,7 +409,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALLISTENERIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALLISTENERIV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] nint values);
+	public unsafe delegate void Lpallisteneriv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] nint values);
 
 	#endif
 
@@ -419,7 +419,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETLISTENERF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETLISTENERF([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value);
+	public unsafe delegate void Lpalgetlistenerf([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value);
 
 	#else
 	/// <summary>
@@ -427,7 +427,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETLISTENERF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETLISTENERF([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] nint value);
+	public unsafe delegate void Lpalgetlistenerf([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] nint value);
 
 	#endif
 
@@ -437,7 +437,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETLISTENER3F")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETLISTENER3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3);
+	public unsafe delegate void Lpalgetlistener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3);
 
 	#else
 	/// <summary>
@@ -445,7 +445,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETLISTENER3F")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETLISTENER3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] nint value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] nint value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] nint value3);
+	public unsafe delegate void Lpalgetlistener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] nint value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] nint value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] nint value3);
 
 	#endif
 
@@ -455,7 +455,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETLISTENERFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETLISTENERFV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] float* values);
+	public unsafe delegate void Lpalgetlistenerfv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] float* values);
 
 	#else
 	/// <summary>
@@ -463,7 +463,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETLISTENERFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETLISTENERFV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] nint values);
+	public unsafe delegate void Lpalgetlistenerfv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] nint values);
 
 	#endif
 
@@ -473,7 +473,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETLISTENERI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETLISTENERI([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] int* value);
+	public unsafe delegate void Lpalgetlisteneri([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] int* value);
 
 	#else
 	/// <summary>
@@ -481,7 +481,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETLISTENERI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETLISTENERI([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] nint value);
+	public unsafe delegate void Lpalgetlisteneri([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] nint value);
 
 	#endif
 
@@ -491,7 +491,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETLISTENER3I")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETLISTENER3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3);
+	public unsafe delegate void Lpalgetlistener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3);
 
 	#else
 	/// <summary>
@@ -499,7 +499,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETLISTENER3I")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETLISTENER3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] nint value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] nint value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] nint value3);
+	public unsafe delegate void Lpalgetlistener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] nint value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] nint value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] nint value3);
 
 	#endif
 
@@ -509,7 +509,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETLISTENERIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETLISTENERIV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] int* values);
+	public unsafe delegate void Lpalgetlisteneriv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] int* values);
 
 	#else
 	/// <summary>
@@ -517,7 +517,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETLISTENERIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETLISTENERIV([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] nint values);
+	public unsafe delegate void Lpalgetlisteneriv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] nint values);
 
 	#endif
 
@@ -527,7 +527,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGENSOURCES")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGENSOURCES([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint*")] uint* sources);
+	public unsafe delegate void Lpalgensources([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint *")] uint* sources);
 
 	#else
 	/// <summary>
@@ -535,7 +535,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGENSOURCES")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGENSOURCES([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint*")] nint sources);
+	public unsafe delegate void Lpalgensources([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint *")] nint sources);
 
 	#endif
 
@@ -545,7 +545,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDELETESOURCES")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDELETESOURCES([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources);
+	public unsafe delegate void Lpaldeletesources([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources);
 
 	#else
 	/// <summary>
@@ -553,7 +553,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDELETESOURCES")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDELETESOURCES([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] nint sources);
+	public unsafe delegate void Lpaldeletesources([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] nint sources);
 
 	#endif
 
@@ -563,7 +563,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISSOURCE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISSOURCE([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
+	public unsafe delegate byte Lpalissource([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
 
 	#else
 	/// <summary>
@@ -571,7 +571,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISSOURCE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISSOURCE([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
+	public unsafe delegate byte Lpalissource([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
 
 	#endif
 
@@ -581,7 +581,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEF([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
+	public unsafe delegate void Lpalsourcef([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
 
 	#else
 	/// <summary>
@@ -589,7 +589,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEF([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
+	public unsafe delegate void Lpalsourcef([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
 
 	#endif
 
@@ -599,7 +599,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCE3F")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCE3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat")] float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat")] float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat")] float value3);
+	public unsafe delegate void Lpalsource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat")] float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat")] float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat")] float value3);
 
 	#else
 	/// <summary>
@@ -607,7 +607,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCE3F")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCE3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat")] float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat")] float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat")] float value3);
+	public unsafe delegate void Lpalsource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat")] float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat")] float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat")] float value3);
 
 	#endif
 
@@ -617,7 +617,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEFV([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] float* values);
+	public unsafe delegate void Lpalsourcefv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] float* values);
 
 	#else
 	/// <summary>
@@ -625,7 +625,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEFV([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] nint values);
+	public unsafe delegate void Lpalsourcefv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] nint values);
 
 	#endif
 
@@ -635,7 +635,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEI([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint")] int value);
+	public unsafe delegate void Lpalsourcei([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint")] int value);
 
 	#else
 	/// <summary>
@@ -643,7 +643,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEI([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint")] int value);
+	public unsafe delegate void Lpalsourcei([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint")] int value);
 
 	#endif
 
@@ -653,7 +653,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCE3I")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCE3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint")] int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint")] int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint")] int value3);
+	public unsafe delegate void Lpalsource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint")] int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint")] int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint")] int value3);
 
 	#else
 	/// <summary>
@@ -661,7 +661,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCE3I")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCE3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint")] int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint")] int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint")] int value3);
+	public unsafe delegate void Lpalsource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint")] int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint")] int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint")] int value3);
 
 	#endif
 
@@ -671,7 +671,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEIV([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] int* values);
+	public unsafe delegate void Lpalsourceiv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] int* values);
 
 	#else
 	/// <summary>
@@ -679,7 +679,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEIV([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] nint values);
+	public unsafe delegate void Lpalsourceiv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] nint values);
 
 	#endif
 
@@ -689,7 +689,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEF([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value);
+	public unsafe delegate void Lpalgetsourcef([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value);
 
 	#else
 	/// <summary>
@@ -697,7 +697,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEF([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] nint value);
+	public unsafe delegate void Lpalgetsourcef([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] nint value);
 
 	#endif
 
@@ -707,7 +707,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCE3F")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCE3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3);
+	public unsafe delegate void Lpalgetsource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3);
 
 	#else
 	/// <summary>
@@ -715,7 +715,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCE3F")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCE3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] nint value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] nint value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] nint value3);
+	public unsafe delegate void Lpalgetsource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] nint value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] nint value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] nint value3);
 
 	#endif
 
@@ -725,7 +725,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEFV([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] float* values);
+	public unsafe delegate void Lpalgetsourcefv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] float* values);
 
 	#else
 	/// <summary>
@@ -733,7 +733,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEFV([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] nint values);
+	public unsafe delegate void Lpalgetsourcefv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] nint values);
 
 	#endif
 
@@ -743,7 +743,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEI([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] int* value);
+	public unsafe delegate void Lpalgetsourcei([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] int* value);
 
 	#else
 	/// <summary>
@@ -751,7 +751,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEI([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] nint value);
+	public unsafe delegate void Lpalgetsourcei([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] nint value);
 
 	#endif
 
@@ -761,7 +761,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCE3I")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCE3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3);
+	public unsafe delegate void Lpalgetsource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3);
 
 	#else
 	/// <summary>
@@ -769,7 +769,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCE3I")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCE3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] nint value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] nint value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] nint value3);
+	public unsafe delegate void Lpalgetsource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] nint value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] nint value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] nint value3);
 
 	#endif
 
@@ -779,7 +779,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEIV([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] int* values);
+	public unsafe delegate void Lpalgetsourceiv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] int* values);
 
 	#else
 	/// <summary>
@@ -787,7 +787,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEIV([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] nint values);
+	public unsafe delegate void Lpalgetsourceiv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] nint values);
 
 	#endif
 
@@ -797,7 +797,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEPLAYV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEPLAYV([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources);
+	public unsafe delegate void Lpalsourceplayv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources);
 
 	#else
 	/// <summary>
@@ -805,7 +805,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEPLAYV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEPLAYV([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] nint sources);
+	public unsafe delegate void Lpalsourceplayv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] nint sources);
 
 	#endif
 
@@ -815,7 +815,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCESTOPV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCESTOPV([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources);
+	public unsafe delegate void Lpalsourcestopv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources);
 
 	#else
 	/// <summary>
@@ -823,7 +823,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCESTOPV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCESTOPV([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] nint sources);
+	public unsafe delegate void Lpalsourcestopv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] nint sources);
 
 	#endif
 
@@ -833,7 +833,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEREWINDV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEREWINDV([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources);
+	public unsafe delegate void Lpalsourcerewindv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources);
 
 	#else
 	/// <summary>
@@ -841,7 +841,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEREWINDV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEREWINDV([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] nint sources);
+	public unsafe delegate void Lpalsourcerewindv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] nint sources);
 
 	#endif
 
@@ -851,7 +851,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEPAUSEV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEPAUSEV([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources);
+	public unsafe delegate void Lpalsourcepausev([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources);
 
 	#else
 	/// <summary>
@@ -859,7 +859,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEPAUSEV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEPAUSEV([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] nint sources);
+	public unsafe delegate void Lpalsourcepausev([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] nint sources);
 
 	#endif
 
@@ -869,7 +869,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEPLAY")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEPLAY([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
+	public unsafe delegate void Lpalsourceplay([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
 
 	#else
 	/// <summary>
@@ -877,7 +877,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEPLAY")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEPLAY([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
+	public unsafe delegate void Lpalsourceplay([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
 
 	#endif
 
@@ -887,7 +887,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCESTOP")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCESTOP([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
+	public unsafe delegate void Lpalsourcestop([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
 
 	#else
 	/// <summary>
@@ -895,7 +895,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCESTOP")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCESTOP([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
+	public unsafe delegate void Lpalsourcestop([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
 
 	#endif
 
@@ -905,7 +905,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEREWIND")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEREWIND([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
+	public unsafe delegate void Lpalsourcerewind([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
 
 	#else
 	/// <summary>
@@ -913,7 +913,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEREWIND")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEREWIND([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
+	public unsafe delegate void Lpalsourcerewind([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
 
 	#endif
 
@@ -923,7 +923,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEPAUSE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEPAUSE([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
+	public unsafe delegate void Lpalsourcepause([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
 
 	#else
 	/// <summary>
@@ -931,7 +931,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEPAUSE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEPAUSE([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
+	public unsafe delegate void Lpalsourcepause([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source);
 
 	#endif
 
@@ -941,7 +941,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEQUEUEBUFFERS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEQUEUEBUFFERS([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* buffers);
+	public unsafe delegate void Lpalsourcequeuebuffers([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* buffers);
 
 	#else
 	/// <summary>
@@ -949,7 +949,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEQUEUEBUFFERS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEQUEUEBUFFERS([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "const ALuint*")] nint buffers);
+	public unsafe delegate void Lpalsourcequeuebuffers([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint const *")] nint buffers);
 
 	#endif
 
@@ -959,7 +959,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEUNQUEUEBUFFERS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEUNQUEUEBUFFERS([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint*")] uint* buffers);
+	public unsafe delegate void Lpalsourceunqueuebuffers([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint *")] uint* buffers);
 
 	#else
 	/// <summary>
@@ -967,7 +967,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEUNQUEUEBUFFERS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEUNQUEUEBUFFERS([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint*")] nint buffers);
+	public unsafe delegate void Lpalsourceunqueuebuffers([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint *")] nint buffers);
 
 	#endif
 
@@ -977,7 +977,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGENBUFFERS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGENBUFFERS([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint*")] uint* buffers);
+	public unsafe delegate void Lpalgenbuffers([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint *")] uint* buffers);
 
 	#else
 	/// <summary>
@@ -985,7 +985,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGENBUFFERS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGENBUFFERS([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint*")] nint buffers);
+	public unsafe delegate void Lpalgenbuffers([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint *")] nint buffers);
 
 	#endif
 
@@ -995,7 +995,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDELETEBUFFERS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDELETEBUFFERS([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* buffers);
+	public unsafe delegate void Lpaldeletebuffers([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* buffers);
 
 	#else
 	/// <summary>
@@ -1003,7 +1003,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDELETEBUFFERS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDELETEBUFFERS([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "const ALuint*")] nint buffers);
+	public unsafe delegate void Lpaldeletebuffers([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint const *")] nint buffers);
 
 	#endif
 
@@ -1013,7 +1013,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISBUFFER")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISBUFFER([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer);
+	public unsafe delegate byte Lpalisbuffer([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer);
 
 	#else
 	/// <summary>
@@ -1021,7 +1021,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISBUFFER")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISBUFFER([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer);
+	public unsafe delegate byte Lpalisbuffer([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer);
 
 	#endif
 
@@ -1031,7 +1031,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERDATA")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERDATA([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALenum")] int format, [NativeName(NativeNameType.Param, "data")] [NativeName(NativeNameType.Type, "const ALvoid*")] void* data, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALsizei")] int size, [NativeName(NativeNameType.Param, "samplerate")] [NativeName(NativeNameType.Type, "ALsizei")] int samplerate);
+	public unsafe delegate void Lpalbufferdata([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALenum")] int format, [NativeName(NativeNameType.Param, "data")] [NativeName(NativeNameType.Type, "ALvoid const *")] void* data, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALsizei")] int size, [NativeName(NativeNameType.Param, "samplerate")] [NativeName(NativeNameType.Type, "ALsizei")] int samplerate);
 
 	#else
 	/// <summary>
@@ -1039,7 +1039,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERDATA")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERDATA([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALenum")] int format, [NativeName(NativeNameType.Param, "data")] [NativeName(NativeNameType.Type, "const ALvoid*")] nint data, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALsizei")] int size, [NativeName(NativeNameType.Param, "samplerate")] [NativeName(NativeNameType.Type, "ALsizei")] int samplerate);
+	public unsafe delegate void Lpalbufferdata([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALenum")] int format, [NativeName(NativeNameType.Param, "data")] [NativeName(NativeNameType.Type, "ALvoid const *")] nint data, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALsizei")] int size, [NativeName(NativeNameType.Param, "samplerate")] [NativeName(NativeNameType.Type, "ALsizei")] int samplerate);
 
 	#endif
 
@@ -1049,7 +1049,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERF([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
+	public unsafe delegate void Lpalbufferf([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
 
 	#else
 	/// <summary>
@@ -1057,7 +1057,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERF([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
+	public unsafe delegate void Lpalbufferf([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
 
 	#endif
 
@@ -1067,7 +1067,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFER3F")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFER3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat")] float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat")] float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat")] float value3);
+	public unsafe delegate void Lpalbuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat")] float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat")] float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat")] float value3);
 
 	#else
 	/// <summary>
@@ -1075,7 +1075,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFER3F")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFER3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat")] float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat")] float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat")] float value3);
+	public unsafe delegate void Lpalbuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat")] float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat")] float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat")] float value3);
 
 	#endif
 
@@ -1085,7 +1085,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERFV([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] float* values);
+	public unsafe delegate void Lpalbufferfv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] float* values);
 
 	#else
 	/// <summary>
@@ -1093,7 +1093,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERFV([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] nint values);
+	public unsafe delegate void Lpalbufferfv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] nint values);
 
 	#endif
 
@@ -1103,7 +1103,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERI([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint")] int value);
+	public unsafe delegate void Lpalbufferi([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint")] int value);
 
 	#else
 	/// <summary>
@@ -1111,7 +1111,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERI([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint")] int value);
+	public unsafe delegate void Lpalbufferi([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint")] int value);
 
 	#endif
 
@@ -1121,7 +1121,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFER3I")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFER3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint")] int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint")] int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint")] int value3);
+	public unsafe delegate void Lpalbuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint")] int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint")] int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint")] int value3);
 
 	#else
 	/// <summary>
@@ -1129,7 +1129,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFER3I")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFER3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint")] int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint")] int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint")] int value3);
+	public unsafe delegate void Lpalbuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint")] int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint")] int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint")] int value3);
 
 	#endif
 
@@ -1139,7 +1139,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERIV([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] int* values);
+	public unsafe delegate void Lpalbufferiv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] int* values);
 
 	#else
 	/// <summary>
@@ -1147,7 +1147,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERIV([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] nint values);
+	public unsafe delegate void Lpalbufferiv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] nint values);
 
 	#endif
 
@@ -1157,7 +1157,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFERF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFERF([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value);
+	public unsafe delegate void Lpalgetbufferf([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value);
 
 	#else
 	/// <summary>
@@ -1165,7 +1165,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFERF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFERF([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] nint value);
+	public unsafe delegate void Lpalgetbufferf([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] nint value);
 
 	#endif
 
@@ -1175,7 +1175,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFER3F")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFER3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3);
+	public unsafe delegate void Lpalgetbuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3);
 
 	#else
 	/// <summary>
@@ -1183,7 +1183,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFER3F")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFER3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] nint value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] nint value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] nint value3);
+	public unsafe delegate void Lpalgetbuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] nint value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] nint value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] nint value3);
 
 	#endif
 
@@ -1193,7 +1193,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFERFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFERFV([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] float* values);
+	public unsafe delegate void Lpalgetbufferfv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] float* values);
 
 	#else
 	/// <summary>
@@ -1201,7 +1201,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFERFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFERFV([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] nint values);
+	public unsafe delegate void Lpalgetbufferfv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] nint values);
 
 	#endif
 
@@ -1211,7 +1211,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFERI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFERI([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] int* value);
+	public unsafe delegate void Lpalgetbufferi([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] int* value);
 
 	#else
 	/// <summary>
@@ -1219,7 +1219,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFERI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFERI([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] nint value);
+	public unsafe delegate void Lpalgetbufferi([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] nint value);
 
 	#endif
 
@@ -1229,7 +1229,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFER3I")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFER3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3);
+	public unsafe delegate void Lpalgetbuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3);
 
 	#else
 	/// <summary>
@@ -1237,7 +1237,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFER3I")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFER3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] nint value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] nint value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] nint value3);
+	public unsafe delegate void Lpalgetbuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] nint value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] nint value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] nint value3);
 
 	#endif
 
@@ -1247,7 +1247,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFERIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFERIV([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] int* values);
+	public unsafe delegate void Lpalgetbufferiv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] int* values);
 
 	#else
 	/// <summary>
@@ -1255,7 +1255,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFERIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFERIV([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] nint values);
+	public unsafe delegate void Lpalgetbufferiv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] nint values);
 
 	#endif
 
@@ -1265,7 +1265,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDOPPLERFACTOR")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDOPPLERFACTOR([NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
+	public unsafe delegate void Lpaldopplerfactor([NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
 
 	#else
 	/// <summary>
@@ -1273,7 +1273,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDOPPLERFACTOR")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDOPPLERFACTOR([NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
+	public unsafe delegate void Lpaldopplerfactor([NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
 
 	#endif
 
@@ -1283,7 +1283,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDOPPLERVELOCITY")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDOPPLERVELOCITY([NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
+	public unsafe delegate void Lpaldopplervelocity([NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
 
 	#else
 	/// <summary>
@@ -1291,7 +1291,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDOPPLERVELOCITY")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDOPPLERVELOCITY([NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
+	public unsafe delegate void Lpaldopplervelocity([NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
 
 	#endif
 
@@ -1301,7 +1301,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSPEEDOFSOUND")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSPEEDOFSOUND([NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
+	public unsafe delegate void Lpalspeedofsound([NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
 
 	#else
 	/// <summary>
@@ -1309,7 +1309,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSPEEDOFSOUND")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSPEEDOFSOUND([NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
+	public unsafe delegate void Lpalspeedofsound([NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat")] float value);
 
 	#endif
 
@@ -1319,7 +1319,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDISTANCEMODEL")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDISTANCEMODEL([NativeName(NativeNameType.Param, "distanceModel")] [NativeName(NativeNameType.Type, "ALenum")] int distanceModel);
+	public unsafe delegate void Lpaldistancemodel([NativeName(NativeNameType.Param, "distanceModel")] [NativeName(NativeNameType.Type, "ALenum")] int distanceModel);
 
 	#else
 	/// <summary>
@@ -1327,7 +1327,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDISTANCEMODEL")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDISTANCEMODEL([NativeName(NativeNameType.Param, "distanceModel")] [NativeName(NativeNameType.Type, "ALenum")] int distanceModel);
+	public unsafe delegate void Lpaldistancemodel([NativeName(NativeNameType.Param, "distanceModel")] [NativeName(NativeNameType.Type, "ALenum")] int distanceModel);
 
 	#endif
 
@@ -1338,7 +1338,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCCREATECONTEXT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate ALCcontext* LPALCCREATECONTEXT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] int* attrlist);
+	public unsafe delegate ALCcontext* Lpalccreatecontext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "ALCint const *")] int* attrlist);
 
 	#else
 	/// <summary>
@@ -1347,7 +1347,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCCREATECONTEXT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate nint LPALCCREATECONTEXT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] nint attrlist);
+	public unsafe delegate nint Lpalccreatecontext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "ALCint const *")] nint attrlist);
 
 	#endif
 
@@ -1357,7 +1357,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCMAKECONTEXTCURRENT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALCMAKECONTEXTCURRENT([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context);
+	public unsafe delegate byte Lpalcmakecontextcurrent([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontext* context);
 
 	#else
 	/// <summary>
@@ -1365,7 +1365,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCMAKECONTEXTCURRENT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALCMAKECONTEXTCURRENT([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] nint context);
+	public unsafe delegate byte Lpalcmakecontextcurrent([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] nint context);
 
 	#endif
 
@@ -1375,7 +1375,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCPROCESSCONTEXT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCPROCESSCONTEXT([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context);
+	public unsafe delegate void Lpalcprocesscontext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontext* context);
 
 	#else
 	/// <summary>
@@ -1383,7 +1383,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCPROCESSCONTEXT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCPROCESSCONTEXT([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] nint context);
+	public unsafe delegate void Lpalcprocesscontext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] nint context);
 
 	#endif
 
@@ -1393,7 +1393,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCSUSPENDCONTEXT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCSUSPENDCONTEXT([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context);
+	public unsafe delegate void Lpalcsuspendcontext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontext* context);
 
 	#else
 	/// <summary>
@@ -1401,7 +1401,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCSUSPENDCONTEXT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCSUSPENDCONTEXT([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] nint context);
+	public unsafe delegate void Lpalcsuspendcontext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] nint context);
 
 	#endif
 
@@ -1411,7 +1411,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCDESTROYCONTEXT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCDESTROYCONTEXT([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context);
+	public unsafe delegate void Lpalcdestroycontext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontext* context);
 
 	#else
 	/// <summary>
@@ -1419,7 +1419,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCDESTROYCONTEXT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCDESTROYCONTEXT([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] nint context);
+	public unsafe delegate void Lpalcdestroycontext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] nint context);
 
 	#endif
 
@@ -1429,7 +1429,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETCURRENTCONTEXT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate ALCcontext* LPALCGETCURRENTCONTEXT();
+	public unsafe delegate ALCcontext* Lpalcgetcurrentcontext();
 
 	#else
 	/// <summary>
@@ -1437,7 +1437,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETCURRENTCONTEXT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate nint LPALCGETCURRENTCONTEXT();
+	public unsafe delegate nint Lpalcgetcurrentcontext();
 
 	#endif
 
@@ -1447,7 +1447,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETCONTEXTSDEVICE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate ALCdevice* LPALCGETCONTEXTSDEVICE([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context);
+	public unsafe delegate ALCdevice* Lpalcgetcontextsdevice([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontext* context);
 
 	#else
 	/// <summary>
@@ -1455,7 +1455,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETCONTEXTSDEVICE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate nint LPALCGETCONTEXTSDEVICE([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] nint context);
+	public unsafe delegate nint Lpalcgetcontextsdevice([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] nint context);
 
 	#endif
 
@@ -1465,7 +1465,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCOPENDEVICE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate ALCdevice* LPALCOPENDEVICE([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* devicename);
+	public unsafe delegate ALCdevice* Lpalcopendevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* devicename);
 
 	#else
 	/// <summary>
@@ -1473,7 +1473,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCOPENDEVICE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate nint LPALCOPENDEVICE([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] nint devicename);
+	public unsafe delegate nint Lpalcopendevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "ALCchar const *")] nint devicename);
 
 	#endif
 
@@ -1483,7 +1483,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCCLOSEDEVICE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALCCLOSEDEVICE([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device);
+	public unsafe delegate byte Lpalcclosedevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device);
 
 	#else
 	/// <summary>
@@ -1491,7 +1491,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCCLOSEDEVICE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALCCLOSEDEVICE([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device);
+	public unsafe delegate byte Lpalcclosedevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device);
 
 	#endif
 
@@ -1501,7 +1501,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETERROR")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate int LPALCGETERROR([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device);
+	public unsafe delegate int Lpalcgeterror([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device);
 
 	#else
 	/// <summary>
@@ -1509,7 +1509,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETERROR")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate int LPALCGETERROR([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device);
+	public unsafe delegate int Lpalcgeterror([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device);
 
 	#endif
 
@@ -1519,7 +1519,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCISEXTENSIONPRESENT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALCISEXTENSIONPRESENT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* extname);
+	public unsafe delegate byte Lpalcisextensionpresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* extname);
 
 	#else
 	/// <summary>
@@ -1527,7 +1527,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCISEXTENSIONPRESENT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALCISEXTENSIONPRESENT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] nint extname);
+	public unsafe delegate byte Lpalcisextensionpresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALCchar const *")] nint extname);
 
 	#endif
 
@@ -1537,7 +1537,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETPROCADDRESS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void* LPALCGETPROCADDRESS([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* funcname);
+	public unsafe delegate void* Lpalcgetprocaddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* funcname);
 
 	#else
 	/// <summary>
@@ -1545,7 +1545,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETPROCADDRESS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate nint LPALCGETPROCADDRESS([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] nint funcname);
+	public unsafe delegate nint Lpalcgetprocaddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "ALCchar const *")] nint funcname);
 
 	#endif
 
@@ -1555,7 +1555,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETENUMVALUE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate int LPALCGETENUMVALUE([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* enumname);
+	public unsafe delegate int Lpalcgetenumvalue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* enumname);
 
 	#else
 	/// <summary>
@@ -1563,7 +1563,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETENUMVALUE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate int LPALCGETENUMVALUE([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] nint enumname);
+	public unsafe delegate int Lpalcgetenumvalue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "ALCchar const *")] nint enumname);
 
 	#endif
 
@@ -1573,7 +1573,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETSTRING")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte* LPALCGETSTRING([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param);
+	public unsafe delegate byte* Lpalcgetstring([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param);
 
 	#else
 	/// <summary>
@@ -1581,7 +1581,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETSTRING")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate nint LPALCGETSTRING([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param);
+	public unsafe delegate nint Lpalcgetstring([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param);
 
 	#endif
 
@@ -1591,7 +1591,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETINTEGERV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCGETINTEGERV([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint*")] int* values);
+	public unsafe delegate void Lpalcgetintegerv([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint *")] int* values);
 
 	#else
 	/// <summary>
@@ -1599,7 +1599,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETINTEGERV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCGETINTEGERV([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint*")] nint values);
+	public unsafe delegate void Lpalcgetintegerv([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint *")] nint values);
 
 	#endif
 
@@ -1609,7 +1609,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCCAPTUREOPENDEVICE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate ALCdevice* LPALCCAPTUREOPENDEVICE([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize);
+	public unsafe delegate ALCdevice* Lpalccaptureopendevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize);
 
 	#else
 	/// <summary>
@@ -1617,7 +1617,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCCAPTUREOPENDEVICE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate nint LPALCCAPTUREOPENDEVICE([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] nint devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize);
+	public unsafe delegate nint Lpalccaptureopendevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "ALCchar const *")] nint devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize);
 
 	#endif
 
@@ -1627,7 +1627,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCCAPTURECLOSEDEVICE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALCCAPTURECLOSEDEVICE([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device);
+	public unsafe delegate byte Lpalccaptureclosedevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device);
 
 	#else
 	/// <summary>
@@ -1635,7 +1635,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCCAPTURECLOSEDEVICE")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALCCAPTURECLOSEDEVICE([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device);
+	public unsafe delegate byte Lpalccaptureclosedevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device);
 
 	#endif
 
@@ -1645,7 +1645,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCCAPTURESTART")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCCAPTURESTART([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device);
+	public unsafe delegate void Lpalccapturestart([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device);
 
 	#else
 	/// <summary>
@@ -1653,7 +1653,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCCAPTURESTART")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCCAPTURESTART([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device);
+	public unsafe delegate void Lpalccapturestart([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device);
 
 	#endif
 
@@ -1663,7 +1663,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCCAPTURESTOP")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCCAPTURESTOP([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device);
+	public unsafe delegate void Lpalccapturestop([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device);
 
 	#else
 	/// <summary>
@@ -1671,7 +1671,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCCAPTURESTOP")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCCAPTURESTOP([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device);
+	public unsafe delegate void Lpalccapturestop([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device);
 
 	#endif
 
@@ -1681,7 +1681,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCCAPTURESAMPLES")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCCAPTURESAMPLES([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALCvoid*")] void* buffer, [NativeName(NativeNameType.Param, "samples")] [NativeName(NativeNameType.Type, "ALCsizei")] int samples);
+	public unsafe delegate void Lpalccapturesamples([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALCvoid *")] void* buffer, [NativeName(NativeNameType.Param, "samples")] [NativeName(NativeNameType.Type, "ALCsizei")] int samples);
 
 	#else
 	/// <summary>
@@ -1689,7 +1689,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCCAPTURESAMPLES")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCCAPTURESAMPLES([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device, [NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALCvoid*")] nint buffer, [NativeName(NativeNameType.Param, "samples")] [NativeName(NativeNameType.Type, "ALCsizei")] int samples);
+	public unsafe delegate void Lpalccapturesamples([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device, [NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALCvoid *")] nint buffer, [NativeName(NativeNameType.Param, "samples")] [NativeName(NativeNameType.Type, "ALCsizei")] int samples);
 
 	#endif
 
@@ -1699,7 +1699,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "PFNALBUFFERDATASTATICPROC")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void PFNALBUFFERDATASTATICPROC([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALvoid*")] void* unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown4);
+	public unsafe delegate void Pfnalbufferdatastaticproc([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint const")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALvoid *")] void* unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown4);
 
 	#else
 	/// <summary>
@@ -1707,7 +1707,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "PFNALBUFFERDATASTATICPROC")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void PFNALBUFFERDATASTATICPROC([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALvoid*")] nint unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown4);
+	public unsafe delegate void Pfnalbufferdatastaticproc([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint const")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALvoid *")] nint unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown4);
 
 	#endif
 
@@ -1717,7 +1717,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGENEFFECTS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGENEFFECTS([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint*")] uint* unknown1);
+	public unsafe delegate void Lpalgeneffects([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint *")] uint* unknown1);
 
 	#else
 	/// <summary>
@@ -1725,7 +1725,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGENEFFECTS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGENEFFECTS([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint*")] nint unknown1);
+	public unsafe delegate void Lpalgeneffects([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint *")] nint unknown1);
 
 	#endif
 
@@ -1735,7 +1735,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDELETEEFFECTS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDELETEEFFECTS([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* unknown1);
+	public unsafe delegate void Lpaldeleteeffects([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* unknown1);
 
 	#else
 	/// <summary>
@@ -1743,7 +1743,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDELETEEFFECTS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDELETEEFFECTS([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALuint*")] nint unknown1);
+	public unsafe delegate void Lpaldeleteeffects([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint const *")] nint unknown1);
 
 	#endif
 
@@ -1753,7 +1753,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISEFFECT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISEFFECT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0);
+	public unsafe delegate byte Lpaliseffect([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0);
 
 	#else
 	/// <summary>
@@ -1761,7 +1761,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISEFFECT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISEFFECT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0);
+	public unsafe delegate byte Lpaliseffect([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0);
 
 	#endif
 
@@ -1771,7 +1771,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALEFFECTI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALEFFECTI([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint")] int unknown2);
+	public unsafe delegate void Lpaleffecti([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint")] int unknown2);
 
 	#else
 	/// <summary>
@@ -1779,7 +1779,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALEFFECTI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALEFFECTI([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint")] int unknown2);
+	public unsafe delegate void Lpaleffecti([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint")] int unknown2);
 
 	#endif
 
@@ -1789,7 +1789,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALEFFECTIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALEFFECTIV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALint*")] int* unknown2);
+	public unsafe delegate void Lpaleffectiv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint const *")] int* unknown2);
 
 	#else
 	/// <summary>
@@ -1797,7 +1797,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALEFFECTIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALEFFECTIV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALint*")] nint unknown2);
+	public unsafe delegate void Lpaleffectiv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint const *")] nint unknown2);
 
 	#endif
 
@@ -1807,7 +1807,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALEFFECTF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALEFFECTF([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat")] float unknown2);
+	public unsafe delegate void Lpaleffectf([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat")] float unknown2);
 
 	#else
 	/// <summary>
@@ -1815,7 +1815,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALEFFECTF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALEFFECTF([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat")] float unknown2);
+	public unsafe delegate void Lpaleffectf([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat")] float unknown2);
 
 	#endif
 
@@ -1825,7 +1825,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALEFFECTFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALEFFECTFV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALfloat*")] float* unknown2);
+	public unsafe delegate void Lpaleffectfv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat const *")] float* unknown2);
 
 	#else
 	/// <summary>
@@ -1833,7 +1833,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALEFFECTFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALEFFECTFV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALfloat*")] nint unknown2);
+	public unsafe delegate void Lpaleffectfv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat const *")] nint unknown2);
 
 	#endif
 
@@ -1843,7 +1843,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETEFFECTI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETEFFECTI([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint*")] int* unknown2);
+	public unsafe delegate void Lpalgeteffecti([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint *")] int* unknown2);
 
 	#else
 	/// <summary>
@@ -1851,7 +1851,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETEFFECTI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETEFFECTI([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint*")] nint unknown2);
+	public unsafe delegate void Lpalgeteffecti([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint *")] nint unknown2);
 
 	#endif
 
@@ -1861,7 +1861,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETEFFECTIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETEFFECTIV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint*")] int* unknown2);
+	public unsafe delegate void Lpalgeteffectiv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint *")] int* unknown2);
 
 	#else
 	/// <summary>
@@ -1869,7 +1869,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETEFFECTIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETEFFECTIV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint*")] nint unknown2);
+	public unsafe delegate void Lpalgeteffectiv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint *")] nint unknown2);
 
 	#endif
 
@@ -1879,7 +1879,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETEFFECTF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETEFFECTF([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat*")] float* unknown2);
+	public unsafe delegate void Lpalgeteffectf([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat *")] float* unknown2);
 
 	#else
 	/// <summary>
@@ -1887,7 +1887,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETEFFECTF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETEFFECTF([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat*")] nint unknown2);
+	public unsafe delegate void Lpalgeteffectf([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat *")] nint unknown2);
 
 	#endif
 
@@ -1897,7 +1897,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETEFFECTFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETEFFECTFV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat*")] float* unknown2);
+	public unsafe delegate void Lpalgeteffectfv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat *")] float* unknown2);
 
 	#else
 	/// <summary>
@@ -1905,7 +1905,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETEFFECTFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETEFFECTFV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat*")] nint unknown2);
+	public unsafe delegate void Lpalgeteffectfv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat *")] nint unknown2);
 
 	#endif
 
@@ -1915,7 +1915,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGENFILTERS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGENFILTERS([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint*")] uint* unknown1);
+	public unsafe delegate void Lpalgenfilters([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint *")] uint* unknown1);
 
 	#else
 	/// <summary>
@@ -1923,7 +1923,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGENFILTERS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGENFILTERS([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint*")] nint unknown1);
+	public unsafe delegate void Lpalgenfilters([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint *")] nint unknown1);
 
 	#endif
 
@@ -1933,7 +1933,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDELETEFILTERS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDELETEFILTERS([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* unknown1);
+	public unsafe delegate void Lpaldeletefilters([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* unknown1);
 
 	#else
 	/// <summary>
@@ -1941,7 +1941,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDELETEFILTERS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDELETEFILTERS([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALuint*")] nint unknown1);
+	public unsafe delegate void Lpaldeletefilters([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint const *")] nint unknown1);
 
 	#endif
 
@@ -1951,7 +1951,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISFILTER")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISFILTER([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0);
+	public unsafe delegate byte Lpalisfilter([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0);
 
 	#else
 	/// <summary>
@@ -1959,7 +1959,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISFILTER")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISFILTER([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0);
+	public unsafe delegate byte Lpalisfilter([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0);
 
 	#endif
 
@@ -1969,7 +1969,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALFILTERI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALFILTERI([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint")] int unknown2);
+	public unsafe delegate void Lpalfilteri([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint")] int unknown2);
 
 	#else
 	/// <summary>
@@ -1977,7 +1977,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALFILTERI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALFILTERI([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint")] int unknown2);
+	public unsafe delegate void Lpalfilteri([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint")] int unknown2);
 
 	#endif
 
@@ -1987,7 +1987,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALFILTERIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALFILTERIV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALint*")] int* unknown2);
+	public unsafe delegate void Lpalfilteriv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint const *")] int* unknown2);
 
 	#else
 	/// <summary>
@@ -1995,7 +1995,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALFILTERIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALFILTERIV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALint*")] nint unknown2);
+	public unsafe delegate void Lpalfilteriv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint const *")] nint unknown2);
 
 	#endif
 
@@ -2005,7 +2005,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALFILTERF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALFILTERF([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat")] float unknown2);
+	public unsafe delegate void Lpalfilterf([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat")] float unknown2);
 
 	#else
 	/// <summary>
@@ -2013,7 +2013,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALFILTERF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALFILTERF([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat")] float unknown2);
+	public unsafe delegate void Lpalfilterf([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat")] float unknown2);
 
 	#endif
 
@@ -2023,7 +2023,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALFILTERFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALFILTERFV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALfloat*")] float* unknown2);
+	public unsafe delegate void Lpalfilterfv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat const *")] float* unknown2);
 
 	#else
 	/// <summary>
@@ -2031,7 +2031,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALFILTERFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALFILTERFV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALfloat*")] nint unknown2);
+	public unsafe delegate void Lpalfilterfv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat const *")] nint unknown2);
 
 	#endif
 
@@ -2041,7 +2041,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETFILTERI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETFILTERI([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint*")] int* unknown2);
+	public unsafe delegate void Lpalgetfilteri([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint *")] int* unknown2);
 
 	#else
 	/// <summary>
@@ -2049,7 +2049,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETFILTERI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETFILTERI([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint*")] nint unknown2);
+	public unsafe delegate void Lpalgetfilteri([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint *")] nint unknown2);
 
 	#endif
 
@@ -2059,7 +2059,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETFILTERIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETFILTERIV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint*")] int* unknown2);
+	public unsafe delegate void Lpalgetfilteriv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint *")] int* unknown2);
 
 	#else
 	/// <summary>
@@ -2067,7 +2067,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETFILTERIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETFILTERIV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint*")] nint unknown2);
+	public unsafe delegate void Lpalgetfilteriv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint *")] nint unknown2);
 
 	#endif
 
@@ -2077,7 +2077,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETFILTERF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETFILTERF([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat*")] float* unknown2);
+	public unsafe delegate void Lpalgetfilterf([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat *")] float* unknown2);
 
 	#else
 	/// <summary>
@@ -2085,7 +2085,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETFILTERF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETFILTERF([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat*")] nint unknown2);
+	public unsafe delegate void Lpalgetfilterf([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat *")] nint unknown2);
 
 	#endif
 
@@ -2095,7 +2095,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETFILTERFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETFILTERFV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat*")] float* unknown2);
+	public unsafe delegate void Lpalgetfilterfv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat *")] float* unknown2);
 
 	#else
 	/// <summary>
@@ -2103,7 +2103,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETFILTERFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETFILTERFV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat*")] nint unknown2);
+	public unsafe delegate void Lpalgetfilterfv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat *")] nint unknown2);
 
 	#endif
 
@@ -2113,7 +2113,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGENAUXILIARYEFFECTSLOTS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGENAUXILIARYEFFECTSLOTS([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint*")] uint* unknown1);
+	public unsafe delegate void Lpalgenauxiliaryeffectslots([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint *")] uint* unknown1);
 
 	#else
 	/// <summary>
@@ -2121,7 +2121,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGENAUXILIARYEFFECTSLOTS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGENAUXILIARYEFFECTSLOTS([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint*")] nint unknown1);
+	public unsafe delegate void Lpalgenauxiliaryeffectslots([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint *")] nint unknown1);
 
 	#endif
 
@@ -2131,7 +2131,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDELETEAUXILIARYEFFECTSLOTS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDELETEAUXILIARYEFFECTSLOTS([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* unknown1);
+	public unsafe delegate void Lpaldeleteauxiliaryeffectslots([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* unknown1);
 
 	#else
 	/// <summary>
@@ -2139,7 +2139,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDELETEAUXILIARYEFFECTSLOTS")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDELETEAUXILIARYEFFECTSLOTS([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALuint*")] nint unknown1);
+	public unsafe delegate void Lpaldeleteauxiliaryeffectslots([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint const *")] nint unknown1);
 
 	#endif
 
@@ -2149,7 +2149,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISAUXILIARYEFFECTSLOT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISAUXILIARYEFFECTSLOT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0);
+	public unsafe delegate byte Lpalisauxiliaryeffectslot([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0);
 
 	#else
 	/// <summary>
@@ -2157,7 +2157,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISAUXILIARYEFFECTSLOT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISAUXILIARYEFFECTSLOT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0);
+	public unsafe delegate byte Lpalisauxiliaryeffectslot([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0);
 
 	#endif
 
@@ -2167,7 +2167,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALAUXILIARYEFFECTSLOTI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALAUXILIARYEFFECTSLOTI([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint")] int unknown2);
+	public unsafe delegate void Lpalauxiliaryeffectsloti([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint")] int unknown2);
 
 	#else
 	/// <summary>
@@ -2175,7 +2175,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALAUXILIARYEFFECTSLOTI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALAUXILIARYEFFECTSLOTI([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint")] int unknown2);
+	public unsafe delegate void Lpalauxiliaryeffectsloti([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint")] int unknown2);
 
 	#endif
 
@@ -2185,7 +2185,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALAUXILIARYEFFECTSLOTIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALAUXILIARYEFFECTSLOTIV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALint*")] int* unknown2);
+	public unsafe delegate void Lpalauxiliaryeffectslotiv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint const *")] int* unknown2);
 
 	#else
 	/// <summary>
@@ -2193,7 +2193,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALAUXILIARYEFFECTSLOTIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALAUXILIARYEFFECTSLOTIV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALint*")] nint unknown2);
+	public unsafe delegate void Lpalauxiliaryeffectslotiv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint const *")] nint unknown2);
 
 	#endif
 
@@ -2203,7 +2203,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALAUXILIARYEFFECTSLOTF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALAUXILIARYEFFECTSLOTF([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat")] float unknown2);
+	public unsafe delegate void Lpalauxiliaryeffectslotf([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat")] float unknown2);
 
 	#else
 	/// <summary>
@@ -2211,7 +2211,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALAUXILIARYEFFECTSLOTF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALAUXILIARYEFFECTSLOTF([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat")] float unknown2);
+	public unsafe delegate void Lpalauxiliaryeffectslotf([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat")] float unknown2);
 
 	#endif
 
@@ -2221,7 +2221,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALAUXILIARYEFFECTSLOTFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALAUXILIARYEFFECTSLOTFV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALfloat*")] float* unknown2);
+	public unsafe delegate void Lpalauxiliaryeffectslotfv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat const *")] float* unknown2);
 
 	#else
 	/// <summary>
@@ -2229,7 +2229,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALAUXILIARYEFFECTSLOTFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALAUXILIARYEFFECTSLOTFV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALfloat*")] nint unknown2);
+	public unsafe delegate void Lpalauxiliaryeffectslotfv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat const *")] nint unknown2);
 
 	#endif
 
@@ -2239,7 +2239,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETAUXILIARYEFFECTSLOTI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETAUXILIARYEFFECTSLOTI([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint*")] int* unknown2);
+	public unsafe delegate void Lpalgetauxiliaryeffectsloti([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint *")] int* unknown2);
 
 	#else
 	/// <summary>
@@ -2247,7 +2247,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETAUXILIARYEFFECTSLOTI")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETAUXILIARYEFFECTSLOTI([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint*")] nint unknown2);
+	public unsafe delegate void Lpalgetauxiliaryeffectsloti([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint *")] nint unknown2);
 
 	#endif
 
@@ -2257,7 +2257,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETAUXILIARYEFFECTSLOTIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETAUXILIARYEFFECTSLOTIV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint*")] int* unknown2);
+	public unsafe delegate void Lpalgetauxiliaryeffectslotiv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint *")] int* unknown2);
 
 	#else
 	/// <summary>
@@ -2265,7 +2265,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETAUXILIARYEFFECTSLOTIV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETAUXILIARYEFFECTSLOTIV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint*")] nint unknown2);
+	public unsafe delegate void Lpalgetauxiliaryeffectslotiv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint *")] nint unknown2);
 
 	#endif
 
@@ -2275,7 +2275,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETAUXILIARYEFFECTSLOTF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETAUXILIARYEFFECTSLOTF([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat*")] float* unknown2);
+	public unsafe delegate void Lpalgetauxiliaryeffectslotf([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat *")] float* unknown2);
 
 	#else
 	/// <summary>
@@ -2283,7 +2283,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETAUXILIARYEFFECTSLOTF")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETAUXILIARYEFFECTSLOTF([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat*")] nint unknown2);
+	public unsafe delegate void Lpalgetauxiliaryeffectslotf([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat *")] nint unknown2);
 
 	#endif
 
@@ -2293,7 +2293,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETAUXILIARYEFFECTSLOTFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETAUXILIARYEFFECTSLOTFV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat*")] float* unknown2);
+	public unsafe delegate void Lpalgetauxiliaryeffectslotfv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat *")] float* unknown2);
 
 	#else
 	/// <summary>
@@ -2301,7 +2301,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETAUXILIARYEFFECTSLOTFV")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETAUXILIARYEFFECTSLOTFV([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat*")] nint unknown2);
+	public unsafe delegate void Lpalgetauxiliaryeffectslotfv([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat *")] nint unknown2);
 
 	#endif
 
@@ -2311,7 +2311,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "PFNALCSETTHREADCONTEXTPROC")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte PFNALCSETTHREADCONTEXTPROC([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context);
+	public unsafe delegate byte Pfnalcsetthreadcontextproc([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontext* context);
 
 	#else
 	/// <summary>
@@ -2319,7 +2319,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "PFNALCSETTHREADCONTEXTPROC")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte PFNALCSETTHREADCONTEXTPROC([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] nint context);
+	public unsafe delegate byte Pfnalcsetthreadcontextproc([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] nint context);
 
 	#endif
 
@@ -2329,7 +2329,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "PFNALCGETTHREADCONTEXTPROC")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate ALCcontext* PFNALCGETTHREADCONTEXTPROC();
+	public unsafe delegate ALCcontext* Pfnalcgetthreadcontextproc();
 
 	#else
 	/// <summary>
@@ -2337,7 +2337,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "PFNALCGETTHREADCONTEXTPROC")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate nint PFNALCGETTHREADCONTEXTPROC();
+	public unsafe delegate nint Pfnalcgetthreadcontextproc();
 
 	#endif
 
@@ -2347,7 +2347,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "PFNALBUFFERSUBDATASOFTPROC")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void PFNALBUFFERSUBDATASOFTPROC([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALvoid*")] void* unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown4);
+	public unsafe delegate void Pfnalbuffersubdatasoftproc([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALvoid const *")] void* unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown4);
 
 	#else
 	/// <summary>
@@ -2355,7 +2355,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "PFNALBUFFERSUBDATASOFTPROC")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void PFNALBUFFERSUBDATASOFTPROC([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALvoid*")] nint unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown4);
+	public unsafe delegate void Pfnalbuffersubdatasoftproc([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALvoid const *")] nint unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown4);
 
 	#endif
 
@@ -2365,7 +2365,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALFOLDBACKCALLBACK")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALFOLDBACKCALLBACK([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1);
+	public unsafe delegate void Lpalfoldbackcallback([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1);
 
 	#else
 	/// <summary>
@@ -2373,7 +2373,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALFOLDBACKCALLBACK")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALFOLDBACKCALLBACK([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1);
+	public unsafe delegate void Lpalfoldbackcallback([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1);
 
 	#endif
 
@@ -2383,7 +2383,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALREQUESTFOLDBACKSTART")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALREQUESTFOLDBACKSTART([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat*")] float* unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "LPALFOLDBACKCALLBACK")] delegate*<int, int, void> unknown4);
+	public unsafe delegate void Lpalrequestfoldbackstart([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat *")] float* unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "LPALFOLDBACKCALLBACK")] delegate*<int, int, void> unknown4);
 
 	#else
 	/// <summary>
@@ -2391,7 +2391,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALREQUESTFOLDBACKSTART")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALREQUESTFOLDBACKSTART([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat*")] nint unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "LPALFOLDBACKCALLBACK")] nint unknown4);
+	public unsafe delegate void Lpalrequestfoldbackstart([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALfloat *")] nint unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "LPALFOLDBACKCALLBACK")] nint unknown4);
 
 	#endif
 
@@ -2401,7 +2401,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALREQUESTFOLDBACKSTOP")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALREQUESTFOLDBACKSTOP();
+	public unsafe delegate void Lpalrequestfoldbackstop();
 
 	#else
 	/// <summary>
@@ -2409,7 +2409,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALREQUESTFOLDBACKSTOP")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALREQUESTFOLDBACKSTOP();
+	public unsafe delegate void Lpalrequestfoldbackstop();
 
 	#endif
 
@@ -2419,7 +2419,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERSAMPLESSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERSAMPLESSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown4, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown5, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALvoid*")] void* unknown6);
+	public unsafe delegate void Lpalbuffersamplessoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown4, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown5, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALvoid const *")] void* unknown6);
 
 	#else
 	/// <summary>
@@ -2427,7 +2427,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERSAMPLESSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERSAMPLESSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown4, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown5, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALvoid*")] nint unknown6);
+	public unsafe delegate void Lpalbuffersamplessoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown4, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown5, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALvoid const *")] nint unknown6);
 
 	#endif
 
@@ -2437,7 +2437,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERSUBSAMPLESSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERSUBSAMPLESSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown4, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALvoid*")] void* unknown5);
+	public unsafe delegate void Lpalbuffersubsamplessoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown4, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALvoid const *")] void* unknown5);
 
 	#else
 	/// <summary>
@@ -2445,7 +2445,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERSUBSAMPLESSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERSUBSAMPLESSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown4, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALvoid*")] nint unknown5);
+	public unsafe delegate void Lpalbuffersubsamplessoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown4, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALvoid const *")] nint unknown5);
 
 	#endif
 
@@ -2455,7 +2455,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFERSAMPLESSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFERSAMPLESSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown4, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALvoid*")] void* unknown5);
+	public unsafe delegate void Lpalgetbuffersamplessoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown4, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALvoid *")] void* unknown5);
 
 	#else
 	/// <summary>
@@ -2463,7 +2463,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFERSAMPLESSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFERSAMPLESSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown4, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALvoid*")] nint unknown5);
+	public unsafe delegate void Lpalgetbuffersamplessoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALsizei")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown4, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALvoid *")] nint unknown5);
 
 	#endif
 
@@ -2473,7 +2473,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISBUFFERFORMATSUPPORTEDSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISBUFFERFORMATSUPPORTEDSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown0);
+	public unsafe delegate byte Lpalisbufferformatsupportedsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown0);
 
 	#else
 	/// <summary>
@@ -2481,7 +2481,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALISBUFFERFORMATSUPPORTEDSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALISBUFFERFORMATSUPPORTEDSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown0);
+	public unsafe delegate byte Lpalisbufferformatsupportedsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown0);
 
 	#endif
 
@@ -2491,7 +2491,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCLOOPBACKOPENDEVICESOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate ALCdevice* LPALCLOOPBACKOPENDEVICESOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* unknown0);
+	public unsafe delegate ALCdevice* Lpalcloopbackopendevicesoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* unknown0);
 
 	#else
 	/// <summary>
@@ -2499,7 +2499,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCLOOPBACKOPENDEVICESOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate nint LPALCLOOPBACKOPENDEVICESOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALCchar*")] nint unknown0);
+	public unsafe delegate nint Lpalcloopbackopendevicesoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCchar const *")] nint unknown0);
 
 	#endif
 
@@ -2509,7 +2509,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCISRENDERFORMATSUPPORTEDSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALCISRENDERFORMATSUPPORTEDSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCenum")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCenum")] int unknown3);
+	public unsafe delegate byte Lpalcisrenderformatsupportedsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCenum")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCenum")] int unknown3);
 
 	#else
 	/// <summary>
@@ -2517,7 +2517,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCISRENDERFORMATSUPPORTEDSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALCISRENDERFORMATSUPPORTEDSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCenum")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCenum")] int unknown3);
+	public unsafe delegate byte Lpalcisrenderformatsupportedsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCsizei")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCenum")] int unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCenum")] int unknown3);
 
 	#endif
 
@@ -2527,7 +2527,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCRENDERSAMPLESSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCRENDERSAMPLESSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCvoid*")] void* unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCsizei")] int unknown2);
+	public unsafe delegate void Lpalcrendersamplessoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCvoid *")] void* unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCsizei")] int unknown2);
 
 	#else
 	/// <summary>
@@ -2535,7 +2535,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCRENDERSAMPLESSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCRENDERSAMPLESSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCvoid*")] nint unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCsizei")] int unknown2);
+	public unsafe delegate void Lpalcrendersamplessoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCvoid *")] nint unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALCsizei")] int unknown2);
 
 	#endif
 
@@ -2545,7 +2545,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEDSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEDSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown2);
+	public unsafe delegate void Lpalsourcedsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown2);
 
 	#else
 	/// <summary>
@@ -2553,7 +2553,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEDSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEDSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown2);
+	public unsafe delegate void Lpalsourcedsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown2);
 
 	#endif
 
@@ -2563,7 +2563,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCE3DSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCE3DSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown4);
+	public unsafe delegate void Lpalsource3Dsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown4);
 
 	#else
 	/// <summary>
@@ -2571,7 +2571,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCE3DSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCE3DSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown4);
+	public unsafe delegate void Lpalsource3Dsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble")] double unknown4);
 
 	#endif
 
@@ -2581,7 +2581,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEDVSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEDVSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALdouble*")] double* unknown2);
+	public unsafe delegate void Lpalsourcedvsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble const *")] double* unknown2);
 
 	#else
 	/// <summary>
@@ -2589,7 +2589,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEDVSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEDVSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALdouble*")] nint unknown2);
+	public unsafe delegate void Lpalsourcedvsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble const *")] nint unknown2);
 
 	#endif
 
@@ -2599,7 +2599,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEDSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEDSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble*")] double* unknown2);
+	public unsafe delegate void Lpalgetsourcedsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble *")] double* unknown2);
 
 	#else
 	/// <summary>
@@ -2607,7 +2607,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEDSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEDSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble*")] nint unknown2);
+	public unsafe delegate void Lpalgetsourcedsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble *")] nint unknown2);
 
 	#endif
 
@@ -2617,7 +2617,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCE3DSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCE3DSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble*")] double* unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble*")] double* unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble*")] double* unknown4);
+	public unsafe delegate void Lpalgetsource3Dsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble *")] double* unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble *")] double* unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble *")] double* unknown4);
 
 	#else
 	/// <summary>
@@ -2625,7 +2625,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCE3DSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCE3DSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble*")] nint unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble*")] nint unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble*")] nint unknown4);
+	public unsafe delegate void Lpalgetsource3Dsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble *")] nint unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble *")] nint unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble *")] nint unknown4);
 
 	#endif
 
@@ -2635,7 +2635,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEDVSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEDVSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble*")] double* unknown2);
+	public unsafe delegate void Lpalgetsourcedvsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble *")] double* unknown2);
 
 	#else
 	/// <summary>
@@ -2643,7 +2643,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEDVSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEDVSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble*")] nint unknown2);
+	public unsafe delegate void Lpalgetsourcedvsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALdouble *")] nint unknown2);
 
 	#endif
 
@@ -2653,7 +2653,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEI64SOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEI64SOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown2);
+	public unsafe delegate void Lpalsourcei64Soft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown2);
 
 	#else
 	/// <summary>
@@ -2661,7 +2661,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEI64SOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEI64SOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown2);
+	public unsafe delegate void Lpalsourcei64Soft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown2);
 
 	#endif
 
@@ -2671,7 +2671,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCE3I64SOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCE3I64SOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown4);
+	public unsafe delegate void Lpalsource3I64Soft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown4);
 
 	#else
 	/// <summary>
@@ -2679,7 +2679,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCE3I64SOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCE3I64SOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown4);
+	public unsafe delegate void Lpalsource3I64Soft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long unknown4);
 
 	#endif
 
@@ -2689,7 +2689,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEI64VSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEI64VSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALint64SOFT*")] long* unknown2);
+	public unsafe delegate void Lpalsourcei64Vsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT const *")] long* unknown2);
 
 	#else
 	/// <summary>
@@ -2697,7 +2697,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEI64VSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEI64VSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "const ALint64SOFT*")] nint unknown2);
+	public unsafe delegate void Lpalsourcei64Vsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT const *")] nint unknown2);
 
 	#endif
 
@@ -2707,7 +2707,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEI64SOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEI64SOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT*")] long* unknown2);
+	public unsafe delegate void Lpalgetsourcei64Soft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT *")] long* unknown2);
 
 	#else
 	/// <summary>
@@ -2715,7 +2715,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEI64SOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEI64SOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT*")] nint unknown2);
+	public unsafe delegate void Lpalgetsourcei64Soft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT *")] nint unknown2);
 
 	#endif
 
@@ -2725,7 +2725,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCE3I64SOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCE3I64SOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT*")] long* unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT*")] long* unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT*")] long* unknown4);
+	public unsafe delegate void Lpalgetsource3I64Soft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT *")] long* unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT *")] long* unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT *")] long* unknown4);
 
 	#else
 	/// <summary>
@@ -2733,7 +2733,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCE3I64SOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCE3I64SOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT*")] nint unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT*")] nint unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT*")] nint unknown4);
+	public unsafe delegate void Lpalgetsource3I64Soft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT *")] nint unknown2, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT *")] nint unknown3, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT *")] nint unknown4);
 
 	#endif
 
@@ -2743,7 +2743,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEI64VSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEI64VSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT*")] long* unknown2);
+	public unsafe delegate void Lpalgetsourcei64Vsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT *")] long* unknown2);
 
 	#else
 	/// <summary>
@@ -2751,7 +2751,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSOURCEI64VSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETSOURCEI64VSOFT([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT*")] nint unknown2);
+	public unsafe delegate void Lpalgetsourcei64Vsoft([NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALuint")] uint unknown0, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALenum")] int unknown1, [NativeName(NativeNameType.Param, "")] [NativeName(NativeNameType.Type, "ALint64SOFT *")] nint unknown2);
 
 	#endif
 
@@ -2761,7 +2761,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDEFERUPDATESSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDEFERUPDATESSOFT();
+	public unsafe delegate void Lpaldeferupdatessoft();
 
 	#else
 	/// <summary>
@@ -2769,7 +2769,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALDEFERUPDATESSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALDEFERUPDATESSOFT();
+	public unsafe delegate void Lpaldeferupdatessoft();
 
 	#endif
 
@@ -2779,7 +2779,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALPROCESSUPDATESSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALPROCESSUPDATESSOFT();
+	public unsafe delegate void Lpalprocessupdatessoft();
 
 	#else
 	/// <summary>
@@ -2787,7 +2787,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALPROCESSUPDATESSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALPROCESSUPDATESSOFT();
+	public unsafe delegate void Lpalprocessupdatessoft();
 
 	#endif
 
@@ -2797,7 +2797,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCDEVICEPAUSESOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCDEVICEPAUSESOFT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device);
+	public unsafe delegate void Lpalcdevicepausesoft([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device);
 
 	#else
 	/// <summary>
@@ -2805,7 +2805,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCDEVICEPAUSESOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCDEVICEPAUSESOFT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device);
+	public unsafe delegate void Lpalcdevicepausesoft([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device);
 
 	#endif
 
@@ -2815,7 +2815,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCDEVICERESUMESOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCDEVICERESUMESOFT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device);
+	public unsafe delegate void Lpalcdeviceresumesoft([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device);
 
 	#else
 	/// <summary>
@@ -2823,7 +2823,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCDEVICERESUMESOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCDEVICERESUMESOFT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device);
+	public unsafe delegate void Lpalcdeviceresumesoft([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device);
 
 	#endif
 
@@ -2833,7 +2833,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETSTRINGISOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte* LPALCGETSTRINGISOFT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "paramName")] [NativeName(NativeNameType.Type, "ALCenum")] int paramName, [NativeName(NativeNameType.Param, "index")] [NativeName(NativeNameType.Type, "ALCsizei")] int index);
+	public unsafe delegate byte* Lpalcgetstringisoft([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "paramName")] [NativeName(NativeNameType.Type, "ALCenum")] int paramName, [NativeName(NativeNameType.Param, "index")] [NativeName(NativeNameType.Type, "ALCsizei")] int index);
 
 	#else
 	/// <summary>
@@ -2841,7 +2841,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETSTRINGISOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate nint LPALCGETSTRINGISOFT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device, [NativeName(NativeNameType.Param, "paramName")] [NativeName(NativeNameType.Type, "ALCenum")] int paramName, [NativeName(NativeNameType.Param, "index")] [NativeName(NativeNameType.Type, "ALCsizei")] int index);
+	public unsafe delegate nint Lpalcgetstringisoft([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device, [NativeName(NativeNameType.Param, "paramName")] [NativeName(NativeNameType.Type, "ALCenum")] int paramName, [NativeName(NativeNameType.Param, "index")] [NativeName(NativeNameType.Type, "ALCsizei")] int index);
 
 	#endif
 
@@ -2851,7 +2851,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCRESETDEVICESOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALCRESETDEVICESOFT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "attribs")] [NativeName(NativeNameType.Type, "const ALCint*")] int* attribs);
+	public unsafe delegate byte Lpalcresetdevicesoft([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "attribs")] [NativeName(NativeNameType.Type, "ALCint const *")] int* attribs);
 
 	#else
 	/// <summary>
@@ -2859,7 +2859,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCRESETDEVICESOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALCRESETDEVICESOFT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device, [NativeName(NativeNameType.Param, "attribs")] [NativeName(NativeNameType.Type, "const ALCint*")] nint attribs);
+	public unsafe delegate byte Lpalcresetdevicesoft([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device, [NativeName(NativeNameType.Param, "attribs")] [NativeName(NativeNameType.Type, "ALCint const *")] nint attribs);
 
 	#endif
 
@@ -2869,7 +2869,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSTRINGISOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte* LPALGETSTRINGISOFT([NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALenum")] int pname, [NativeName(NativeNameType.Param, "index")] [NativeName(NativeNameType.Type, "ALsizei")] int index);
+	public unsafe delegate byte* Lpalgetstringisoft([NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALenum")] int pname, [NativeName(NativeNameType.Param, "index")] [NativeName(NativeNameType.Type, "ALsizei")] int index);
 
 	#else
 	/// <summary>
@@ -2877,7 +2877,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETSTRINGISOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate nint LPALGETSTRINGISOFT([NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALenum")] int pname, [NativeName(NativeNameType.Param, "index")] [NativeName(NativeNameType.Type, "ALsizei")] int index);
+	public unsafe delegate nint Lpalgetstringisoft([NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALenum")] int pname, [NativeName(NativeNameType.Param, "index")] [NativeName(NativeNameType.Type, "ALsizei")] int index);
 
 	#endif
 
@@ -2887,7 +2887,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETINTEGER64VSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCGETINTEGER64VSOFT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALCenum")] int pname, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint64SOFT*")] long* values);
+	public unsafe delegate void Lpalcgetinteger64Vsoft([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALCenum")] int pname, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint64SOFT *")] long* values);
 
 	#else
 	/// <summary>
@@ -2895,7 +2895,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCGETINTEGER64VSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALCGETINTEGER64VSOFT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device, [NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALCenum")] int pname, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint64SOFT*")] nint values);
+	public unsafe delegate void Lpalcgetinteger64Vsoft([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device, [NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALCenum")] int pname, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint64SOFT *")] nint values);
 
 	#endif
 
@@ -2905,7 +2905,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "ALEVENTPROCSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void ALEVENTPROCSOFT([NativeName(NativeNameType.Param, "eventType")] [NativeName(NativeNameType.Type, "ALenum")] int eventType, [NativeName(NativeNameType.Param, "object")] [NativeName(NativeNameType.Type, "ALuint")] uint @object, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALuint")] uint param, [NativeName(NativeNameType.Param, "length")] [NativeName(NativeNameType.Type, "ALsizei")] int length, [NativeName(NativeNameType.Param, "message")] [NativeName(NativeNameType.Type, "const ALchar*")] byte* message, [NativeName(NativeNameType.Param, "userParam")] [NativeName(NativeNameType.Type, "void*")] void* userParam);
+	public unsafe delegate void Aleventprocsoft([NativeName(NativeNameType.Param, "eventType")] [NativeName(NativeNameType.Type, "ALenum")] int eventType, [NativeName(NativeNameType.Param, "object")] [NativeName(NativeNameType.Type, "ALuint")] uint @object, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALuint")] uint param, [NativeName(NativeNameType.Param, "length")] [NativeName(NativeNameType.Type, "ALsizei")] int length, [NativeName(NativeNameType.Param, "message")] [NativeName(NativeNameType.Type, "ALchar const *")] byte* message, [NativeName(NativeNameType.Param, "userParam")] [NativeName(NativeNameType.Type, "void *")] void* userParam);
 
 	#else
 	/// <summary>
@@ -2913,7 +2913,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "ALEVENTPROCSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void ALEVENTPROCSOFT([NativeName(NativeNameType.Param, "eventType")] [NativeName(NativeNameType.Type, "ALenum")] int eventType, [NativeName(NativeNameType.Param, "object")] [NativeName(NativeNameType.Type, "ALuint")] uint @object, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALuint")] uint param, [NativeName(NativeNameType.Param, "length")] [NativeName(NativeNameType.Type, "ALsizei")] int length, [NativeName(NativeNameType.Param, "message")] [NativeName(NativeNameType.Type, "const ALchar*")] nint message, [NativeName(NativeNameType.Param, "userParam")] [NativeName(NativeNameType.Type, "void*")] nint userParam);
+	public unsafe delegate void Aleventprocsoft([NativeName(NativeNameType.Param, "eventType")] [NativeName(NativeNameType.Type, "ALenum")] int eventType, [NativeName(NativeNameType.Param, "object")] [NativeName(NativeNameType.Type, "ALuint")] uint @object, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALuint")] uint param, [NativeName(NativeNameType.Param, "length")] [NativeName(NativeNameType.Type, "ALsizei")] int length, [NativeName(NativeNameType.Param, "message")] [NativeName(NativeNameType.Type, "ALchar const *")] nint message, [NativeName(NativeNameType.Param, "userParam")] [NativeName(NativeNameType.Type, "void *")] nint userParam);
 
 	#endif
 
@@ -2923,7 +2923,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALEVENTCONTROLSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALEVENTCONTROLSOFT([NativeName(NativeNameType.Param, "count")] [NativeName(NativeNameType.Type, "ALsizei")] int count, [NativeName(NativeNameType.Param, "types")] [NativeName(NativeNameType.Type, "const ALenum*")] int* types, [NativeName(NativeNameType.Param, "enable")] [NativeName(NativeNameType.Type, "ALboolean")] byte enable);
+	public unsafe delegate void Lpaleventcontrolsoft([NativeName(NativeNameType.Param, "count")] [NativeName(NativeNameType.Type, "ALsizei")] int count, [NativeName(NativeNameType.Param, "types")] [NativeName(NativeNameType.Type, "ALenum const *")] int* types, [NativeName(NativeNameType.Param, "enable")] [NativeName(NativeNameType.Type, "ALboolean")] byte enable);
 
 	#else
 	/// <summary>
@@ -2931,7 +2931,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALEVENTCONTROLSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALEVENTCONTROLSOFT([NativeName(NativeNameType.Param, "count")] [NativeName(NativeNameType.Type, "ALsizei")] int count, [NativeName(NativeNameType.Param, "types")] [NativeName(NativeNameType.Type, "const ALenum*")] nint types, [NativeName(NativeNameType.Param, "enable")] [NativeName(NativeNameType.Type, "ALboolean")] byte enable);
+	public unsafe delegate void Lpaleventcontrolsoft([NativeName(NativeNameType.Param, "count")] [NativeName(NativeNameType.Type, "ALsizei")] int count, [NativeName(NativeNameType.Param, "types")] [NativeName(NativeNameType.Type, "ALenum const *")] nint types, [NativeName(NativeNameType.Param, "enable")] [NativeName(NativeNameType.Type, "ALboolean")] byte enable);
 
 	#endif
 
@@ -2941,7 +2941,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALEVENTCALLBACKSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALEVENTCALLBACKSOFT([NativeName(NativeNameType.Param, "callback")] [NativeName(NativeNameType.Type, "ALEVENTPROCSOFT")] delegate*<int, uint, uint, int, byte*, void*, void> callback, [NativeName(NativeNameType.Param, "userParam")] [NativeName(NativeNameType.Type, "void*")] void* userParam);
+	public unsafe delegate void Lpaleventcallbacksoft([NativeName(NativeNameType.Param, "callback")] [NativeName(NativeNameType.Type, "ALEVENTPROCSOFT")] delegate*<int, uint, uint, int, byte*, void*, void> callback, [NativeName(NativeNameType.Param, "userParam")] [NativeName(NativeNameType.Type, "void *")] void* userParam);
 
 	#else
 	/// <summary>
@@ -2949,7 +2949,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALEVENTCALLBACKSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALEVENTCALLBACKSOFT([NativeName(NativeNameType.Param, "callback")] [NativeName(NativeNameType.Type, "ALEVENTPROCSOFT")] nint callback, [NativeName(NativeNameType.Param, "userParam")] [NativeName(NativeNameType.Type, "void*")] nint userParam);
+	public unsafe delegate void Lpaleventcallbacksoft([NativeName(NativeNameType.Param, "callback")] [NativeName(NativeNameType.Type, "ALEVENTPROCSOFT")] nint callback, [NativeName(NativeNameType.Param, "userParam")] [NativeName(NativeNameType.Type, "void *")] nint userParam);
 
 	#endif
 
@@ -2959,7 +2959,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETPOINTERSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void* LPALGETPOINTERSOFT([NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALenum")] int pname);
+	public unsafe delegate void* Lpalgetpointersoft([NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALenum")] int pname);
 
 	#else
 	/// <summary>
@@ -2967,7 +2967,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETPOINTERSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate nint LPALGETPOINTERSOFT([NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALenum")] int pname);
+	public unsafe delegate nint Lpalgetpointersoft([NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALenum")] int pname);
 
 	#endif
 
@@ -2977,7 +2977,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETPOINTERVSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETPOINTERVSOFT([NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALenum")] int pname, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "void**")] void** values);
+	public unsafe delegate void Lpalgetpointervsoft([NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALenum")] int pname, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "void * *")] void** values);
 
 	#else
 	/// <summary>
@@ -2985,7 +2985,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETPOINTERVSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETPOINTERVSOFT([NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALenum")] int pname, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "void**")] nint values);
+	public unsafe delegate void Lpalgetpointervsoft([NativeName(NativeNameType.Param, "pname")] [NativeName(NativeNameType.Type, "ALenum")] int pname, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "void * *")] nint values);
 
 	#endif
 
@@ -2995,7 +2995,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCREOPENDEVICESOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALCREOPENDEVICESOFT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "deviceName")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* deviceName, [NativeName(NativeNameType.Param, "attribs")] [NativeName(NativeNameType.Type, "const ALCint*")] int* attribs);
+	public unsafe delegate byte Lpalcreopendevicesoft([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "deviceName")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* deviceName, [NativeName(NativeNameType.Param, "attribs")] [NativeName(NativeNameType.Type, "ALCint const *")] int* attribs);
 
 	#else
 	/// <summary>
@@ -3003,7 +3003,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALCREOPENDEVICESOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate byte LPALCREOPENDEVICESOFT([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] nint device, [NativeName(NativeNameType.Param, "deviceName")] [NativeName(NativeNameType.Type, "const ALCchar*")] nint deviceName, [NativeName(NativeNameType.Param, "attribs")] [NativeName(NativeNameType.Type, "const ALCint*")] nint attribs);
+	public unsafe delegate byte Lpalcreopendevicesoft([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] nint device, [NativeName(NativeNameType.Param, "deviceName")] [NativeName(NativeNameType.Type, "ALCchar const *")] nint deviceName, [NativeName(NativeNameType.Param, "attribs")] [NativeName(NativeNameType.Type, "ALCint const *")] nint attribs);
 
 	#endif
 
@@ -3013,7 +3013,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "ALBUFFERCALLBACKTYPESOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate int ALBUFFERCALLBACKTYPESOFT([NativeName(NativeNameType.Param, "userptr")] [NativeName(NativeNameType.Type, "ALvoid*")] void* userptr, [NativeName(NativeNameType.Param, "sampledata")] [NativeName(NativeNameType.Type, "ALvoid*")] void* sampledata, [NativeName(NativeNameType.Param, "numbytes")] [NativeName(NativeNameType.Type, "ALsizei")] int numbytes);
+	public unsafe delegate int Albuffercallbacktypesoft([NativeName(NativeNameType.Param, "userptr")] [NativeName(NativeNameType.Type, "ALvoid *")] void* userptr, [NativeName(NativeNameType.Param, "sampledata")] [NativeName(NativeNameType.Type, "ALvoid *")] void* sampledata, [NativeName(NativeNameType.Param, "numbytes")] [NativeName(NativeNameType.Type, "ALsizei")] int numbytes);
 
 	#else
 	/// <summary>
@@ -3021,7 +3021,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "ALBUFFERCALLBACKTYPESOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate int ALBUFFERCALLBACKTYPESOFT([NativeName(NativeNameType.Param, "userptr")] [NativeName(NativeNameType.Type, "ALvoid*")] nint userptr, [NativeName(NativeNameType.Param, "sampledata")] [NativeName(NativeNameType.Type, "ALvoid*")] nint sampledata, [NativeName(NativeNameType.Param, "numbytes")] [NativeName(NativeNameType.Type, "ALsizei")] int numbytes);
+	public unsafe delegate int Albuffercallbacktypesoft([NativeName(NativeNameType.Param, "userptr")] [NativeName(NativeNameType.Type, "ALvoid *")] nint userptr, [NativeName(NativeNameType.Param, "sampledata")] [NativeName(NativeNameType.Type, "ALvoid *")] nint sampledata, [NativeName(NativeNameType.Param, "numbytes")] [NativeName(NativeNameType.Type, "ALsizei")] int numbytes);
 
 	#endif
 
@@ -3031,7 +3031,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERCALLBACKSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERCALLBACKSOFT([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALenum")] int format, [NativeName(NativeNameType.Param, "freq")] [NativeName(NativeNameType.Type, "ALsizei")] int freq, [NativeName(NativeNameType.Param, "callback")] [NativeName(NativeNameType.Type, "ALBUFFERCALLBACKTYPESOFT")] delegate*<void*, void*, int, int> callback, [NativeName(NativeNameType.Param, "userptr")] [NativeName(NativeNameType.Type, "ALvoid*")] void* userptr);
+	public unsafe delegate void Lpalbuffercallbacksoft([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALenum")] int format, [NativeName(NativeNameType.Param, "freq")] [NativeName(NativeNameType.Type, "ALsizei")] int freq, [NativeName(NativeNameType.Param, "callback")] [NativeName(NativeNameType.Type, "ALBUFFERCALLBACKTYPESOFT")] delegate*<void*, void*, int, int> callback, [NativeName(NativeNameType.Param, "userptr")] [NativeName(NativeNameType.Type, "ALvoid *")] void* userptr);
 
 	#else
 	/// <summary>
@@ -3039,7 +3039,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALBUFFERCALLBACKSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALBUFFERCALLBACKSOFT([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALenum")] int format, [NativeName(NativeNameType.Param, "freq")] [NativeName(NativeNameType.Type, "ALsizei")] int freq, [NativeName(NativeNameType.Param, "callback")] [NativeName(NativeNameType.Type, "ALBUFFERCALLBACKTYPESOFT")] nint callback, [NativeName(NativeNameType.Param, "userptr")] [NativeName(NativeNameType.Type, "ALvoid*")] nint userptr);
+	public unsafe delegate void Lpalbuffercallbacksoft([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALenum")] int format, [NativeName(NativeNameType.Param, "freq")] [NativeName(NativeNameType.Type, "ALsizei")] int freq, [NativeName(NativeNameType.Param, "callback")] [NativeName(NativeNameType.Type, "ALBUFFERCALLBACKTYPESOFT")] nint callback, [NativeName(NativeNameType.Param, "userptr")] [NativeName(NativeNameType.Type, "ALvoid *")] nint userptr);
 
 	#endif
 
@@ -3049,7 +3049,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFERPTRSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFERPTRSOFT([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALvoid**")] void** value);
+	public unsafe delegate void Lpalgetbufferptrsoft([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALvoid * *")] void** value);
 
 	#else
 	/// <summary>
@@ -3057,7 +3057,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFERPTRSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFERPTRSOFT([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALvoid**")] nint value);
+	public unsafe delegate void Lpalgetbufferptrsoft([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALvoid * *")] nint value);
 
 	#endif
 
@@ -3067,7 +3067,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFER3PTRSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFER3PTRSOFT([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALvoid**")] void** value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALvoid**")] void** value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALvoid**")] void** value3);
+	public unsafe delegate void Lpalgetbuffer3Ptrsoft([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALvoid * *")] void** value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALvoid * *")] void** value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALvoid * *")] void** value3);
 
 	#else
 	/// <summary>
@@ -3075,7 +3075,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFER3PTRSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFER3PTRSOFT([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALvoid**")] nint value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALvoid**")] nint value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALvoid**")] nint value3);
+	public unsafe delegate void Lpalgetbuffer3Ptrsoft([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALvoid * *")] nint value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALvoid * *")] nint value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALvoid * *")] nint value3);
 
 	#endif
 
@@ -3085,7 +3085,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFERPTRVSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFERPTRVSOFT([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALvoid**")] void** values);
+	public unsafe delegate void Lpalgetbufferptrvsoft([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALvoid * *")] void** values);
 
 	#else
 	/// <summary>
@@ -3093,7 +3093,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALGETBUFFERPTRVSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALGETBUFFERPTRVSOFT([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALvoid**")] nint values);
+	public unsafe delegate void Lpalgetbufferptrvsoft([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALvoid * *")] nint values);
 
 	#endif
 
@@ -3103,7 +3103,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEPLAYATTIMESOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEPLAYATTIMESOFT([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "start_time")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long startTime);
+	public unsafe delegate void Lpalsourceplayattimesoft([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "start_time")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long startTime);
 
 	#else
 	/// <summary>
@@ -3111,7 +3111,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEPLAYATTIMESOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEPLAYATTIMESOFT([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "start_time")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long startTime);
+	public unsafe delegate void Lpalsourceplayattimesoft([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "start_time")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long startTime);
 
 	#endif
 
@@ -3121,7 +3121,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEPLAYATTIMEVSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEPLAYATTIMEVSOFT([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources, [NativeName(NativeNameType.Param, "start_time")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long startTime);
+	public unsafe delegate void Lpalsourceplayattimevsoft([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources, [NativeName(NativeNameType.Param, "start_time")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long startTime);
 
 	#else
 	/// <summary>
@@ -3129,7 +3129,7 @@ namespace Hexa.NET.OpenAL
 	/// </summary>
 	[NativeName(NativeNameType.Delegate, "LPALSOURCEPLAYATTIMEVSOFT")]
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public unsafe delegate void LPALSOURCEPLAYATTIMEVSOFT([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] nint sources, [NativeName(NativeNameType.Param, "start_time")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long startTime);
+	public unsafe delegate void Lpalsourceplayattimevsoft([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] nint sources, [NativeName(NativeNameType.Param, "start_time")] [NativeName(NativeNameType.Type, "ALint64SOFT")] long startTime);
 
 	#endif
 

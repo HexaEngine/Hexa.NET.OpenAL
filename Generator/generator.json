@@ -34,7 +34,7 @@
     "ALint": "int",
     "ALuint": "uint",
     "ALsizei": "int",
-    "ALenum": "ALEnum",
+    "ALenum": "int",
     "ALfloat": "float",
     "ALdouble": "double",
     "ALvoid": "void",

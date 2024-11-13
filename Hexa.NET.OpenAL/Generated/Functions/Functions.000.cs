@@ -196,7 +196,7 @@ namespace Hexa.NET.OpenAL
 		/// Context state retrieval. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetString")]
-		[return: NativeName(NativeNameType.Type, "const ALchar*")]
+		[return: NativeName(NativeNameType.Type, "ALchar const *")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static byte* GetStringNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param)
 		{
@@ -211,7 +211,7 @@ namespace Hexa.NET.OpenAL
 		/// Context state retrieval. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetString")]
-		[return: NativeName(NativeNameType.Type, "const ALchar*")]
+		[return: NativeName(NativeNameType.Type, "ALchar const *")]
 		public static byte* GetString([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param)
 		{
 			byte* ret = GetStringNative(param);
@@ -222,7 +222,7 @@ namespace Hexa.NET.OpenAL
 		/// Context state retrieval. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetString")]
-		[return: NativeName(NativeNameType.Type, "const ALchar*")]
+		[return: NativeName(NativeNameType.Type, "ALchar const *")]
 		public static string GetStringS([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param)
 		{
 			string ret = Utils.DecodeStringUTF8(GetStringNative(param));
@@ -235,7 +235,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetBooleanv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBooleanvNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALboolean*")] byte* values)
+		internal static void GetBooleanvNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALboolean *")] byte* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, byte*, void>)funcTable[8])(param, values);
@@ -249,7 +249,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBooleanv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBooleanv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALboolean*")] byte* values)
+		public static void GetBooleanv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALboolean *")] byte* values)
 		{
 			GetBooleanvNative(param, values);
 		}
@@ -259,7 +259,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBooleanv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBooleanv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALboolean*")] ref byte values)
+		public static void GetBooleanv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALboolean *")] ref byte values)
 		{
 			fixed (byte* pvalues = &values)
 			{
@@ -270,42 +270,10 @@ namespace Hexa.NET.OpenAL
 		/// <summary>
 		/// To be documented.
 		/// </summary>
-		[NativeName(NativeNameType.Func, "alGetBooleanv")]
-		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBooleanv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALboolean*")] ref string values)
-		{
-			byte* pStr0 = null;
-			int pStrSize0 = 0;
-			if (values != null)
-			{
-				pStrSize0 = Utils.GetByteCountUTF8(values);
-				if (pStrSize0 >= Utils.MaxStackallocSize)
-				{
-					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
-				}
-				else
-				{
-					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
-					pStr0 = pStrStack0;
-				}
-				int pStrOffset0 = Utils.EncodeStringUTF8(values, pStr0, pStrSize0);
-				pStr0[pStrOffset0] = 0;
-			}
-			GetBooleanvNative(param, pStr0);
-			values = Utils.DecodeStringUTF8(pStr0);
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				Utils.Free(pStr0);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetIntegerv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetIntegervNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] int* values)
+		internal static void GetIntegervNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] int* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int*, void>)funcTable[9])(param, values);
@@ -319,7 +287,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetIntegerv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetIntegerv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] int* values)
+		public static void GetIntegerv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] int* values)
 		{
 			GetIntegervNative(param, values);
 		}
@@ -329,7 +297,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetIntegerv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetIntegerv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] ref int values)
+		public static void GetIntegerv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] ref int values)
 		{
 			fixed (int* pvalues = &values)
 			{
@@ -343,7 +311,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetFloatv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFloatvNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] float* values)
+		internal static void GetFloatvNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] float* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float*, void>)funcTable[10])(param, values);
@@ -357,7 +325,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetFloatv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetFloatv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] float* values)
+		public static void GetFloatv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] float* values)
 		{
 			GetFloatvNative(param, values);
 		}
@@ -367,7 +335,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetFloatv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetFloatv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float values)
+		public static void GetFloatv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float values)
 		{
 			fixed (float* pvalues = &values)
 			{
@@ -381,7 +349,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetDoublev")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetDoublevNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALdouble*")] double* values)
+		internal static void GetDoublevNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALdouble *")] double* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, double*, void>)funcTable[11])(param, values);
@@ -395,7 +363,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetDoublev")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetDoublev([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALdouble*")] double* values)
+		public static void GetDoublev([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALdouble *")] double* values)
 		{
 			GetDoublevNative(param, values);
 		}
@@ -405,7 +373,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetDoublev")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetDoublev([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALdouble*")] ref double values)
+		public static void GetDoublev([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALdouble *")] ref double values)
 		{
 			fixed (double* pvalues = &values)
 			{
@@ -551,7 +519,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALboolean")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsExtensionPresentNative([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALchar*")] byte* extname)
+		internal static byte IsExtensionPresentNative([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALchar const *")] byte* extname)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<byte*, byte>)funcTable[17])(extname);
@@ -565,7 +533,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALboolean")]
-		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALchar*")] byte* extname)
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALchar const *")] byte* extname)
 		{
 			byte ret = IsExtensionPresentNative(extname);
 			return ret;
@@ -576,7 +544,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALboolean")]
-		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALchar*")] ref byte extname)
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALchar const *")] ref byte extname)
 		{
 			fixed (byte* pextname = &extname)
 			{
@@ -590,7 +558,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALboolean")]
-		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALchar*")] ReadOnlySpan<byte> extname)
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALchar const *")] ReadOnlySpan<byte> extname)
 		{
 			fixed (byte* pextname = extname)
 			{
@@ -604,7 +572,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALboolean")]
-		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALchar*")] string extname)
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALchar const *")] string extname)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -636,9 +604,9 @@ namespace Hexa.NET.OpenAL
 		/// specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetProcAddress")]
-		[return: NativeName(NativeNameType.Type, "void*")]
+		[return: NativeName(NativeNameType.Type, "void *")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void* GetProcAddressNative([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "const ALchar*")] byte* fname)
+		internal static void* GetProcAddressNative([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "ALchar const *")] byte* fname)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<byte*, void*>)funcTable[18])(fname);
@@ -652,8 +620,8 @@ namespace Hexa.NET.OpenAL
 		/// specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetProcAddress")]
-		[return: NativeName(NativeNameType.Type, "void*")]
-		public static void* GetProcAddress([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "const ALchar*")] byte* fname)
+		[return: NativeName(NativeNameType.Type, "void *")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "ALchar const *")] byte* fname)
 		{
 			void* ret = GetProcAddressNative(fname);
 			return ret;
@@ -664,8 +632,8 @@ namespace Hexa.NET.OpenAL
 		/// specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetProcAddress")]
-		[return: NativeName(NativeNameType.Type, "void*")]
-		public static void* GetProcAddress([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "const ALchar*")] ref byte fname)
+		[return: NativeName(NativeNameType.Type, "void *")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "ALchar const *")] ref byte fname)
 		{
 			fixed (byte* pfname = &fname)
 			{
@@ -679,8 +647,8 @@ namespace Hexa.NET.OpenAL
 		/// specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetProcAddress")]
-		[return: NativeName(NativeNameType.Type, "void*")]
-		public static void* GetProcAddress([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "const ALchar*")] ReadOnlySpan<byte> fname)
+		[return: NativeName(NativeNameType.Type, "void *")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "ALchar const *")] ReadOnlySpan<byte> fname)
 		{
 			fixed (byte* pfname = fname)
 			{
@@ -694,8 +662,8 @@ namespace Hexa.NET.OpenAL
 		/// specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetProcAddress")]
-		[return: NativeName(NativeNameType.Type, "void*")]
-		public static void* GetProcAddress([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "const ALchar*")] string fname)
+		[return: NativeName(NativeNameType.Type, "void *")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "fname")] [NativeName(NativeNameType.Type, "ALchar const *")] string fname)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -728,7 +696,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALenum")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetEnumValueNative([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "const ALchar*")] byte* ename)
+		internal static int GetEnumValueNative([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "ALchar const *")] byte* ename)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<byte*, int>)funcTable[19])(ename);
@@ -742,7 +710,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALenum")]
-		public static int GetEnumValue([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "const ALchar*")] byte* ename)
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "ALchar const *")] byte* ename)
 		{
 			int ret = GetEnumValueNative(ename);
 			return ret;
@@ -753,7 +721,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALenum")]
-		public static int GetEnumValue([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "const ALchar*")] ref byte ename)
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "ALchar const *")] ref byte ename)
 		{
 			fixed (byte* pename = &ename)
 			{
@@ -767,7 +735,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALenum")]
-		public static int GetEnumValue([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "const ALchar*")] ReadOnlySpan<byte> ename)
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "ALchar const *")] ReadOnlySpan<byte> ename)
 		{
 			fixed (byte* pename = ename)
 			{
@@ -781,7 +749,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALenum")]
-		public static int GetEnumValue([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "const ALchar*")] string ename)
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "ename")] [NativeName(NativeNameType.Type, "ALchar const *")] string ename)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -864,7 +832,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alListenerfv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ListenerfvNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] float* values)
+		internal static void ListenerfvNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] float* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float*, void>)funcTable[22])(param, values);
@@ -878,7 +846,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alListenerfv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void Listenerfv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] float* values)
+		public static void Listenerfv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] float* values)
 		{
 			ListenerfvNative(param, values);
 		}
@@ -888,7 +856,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alListenerfv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void Listenerfv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] ref float values)
+		public static void Listenerfv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] ref float values)
 		{
 			fixed (float* pvalues = &values)
 			{
@@ -952,7 +920,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alListeneriv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ListenerivNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] int* values)
+		internal static void ListenerivNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] int* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int*, void>)funcTable[25])(param, values);
@@ -966,7 +934,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alListeneriv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void Listeneriv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] int* values)
+		public static void Listeneriv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] int* values)
 		{
 			ListenerivNative(param, values);
 		}
@@ -976,7 +944,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alListeneriv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void Listeneriv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] ref int values)
+		public static void Listeneriv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] ref int values)
 		{
 			fixed (int* pvalues = &values)
 			{
@@ -990,7 +958,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetListenerf")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetListenerfNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value)
+		internal static void GetListenerfNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float*, void>)funcTable[26])(param, value);
@@ -1004,7 +972,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListenerf")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListenerf([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value)
+		public static void GetListenerf([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value)
 		{
 			GetListenerfNative(param, value);
 		}
@@ -1014,7 +982,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListenerf")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListenerf([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value)
+		public static void GetListenerf([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value)
 		{
 			fixed (float* pvalue = &value)
 			{
@@ -1028,7 +996,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetListener3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetListener3FNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		internal static void GetListener3FNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float*, float*, float*, void>)funcTable[27])(param, value1, value2, value3);
@@ -1042,7 +1010,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			GetListener3FNative(param, value1, value2, value3);
 		}
@@ -1052,7 +1020,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			fixed (float* pvalue1 = &value1)
 			{
@@ -1065,7 +1033,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			fixed (float* pvalue2 = &value2)
 			{
@@ -1078,7 +1046,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			fixed (float* pvalue1 = &value1)
 			{
@@ -1094,7 +1062,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value3)
+		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value3)
 		{
 			fixed (float* pvalue3 = &value3)
 			{
@@ -1107,7 +1075,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value3)
+		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value3)
 		{
 			fixed (float* pvalue1 = &value1)
 			{
@@ -1123,7 +1091,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value3)
+		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value3)
 		{
 			fixed (float* pvalue2 = &value2)
 			{
@@ -1139,7 +1107,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value3)
+		public static void GetListener3F([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value3)
 		{
 			fixed (float* pvalue1 = &value1)
 			{
@@ -1159,7 +1127,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetListenerfv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetListenerfvNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] float* values)
+		internal static void GetListenerfvNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] float* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float*, void>)funcTable[28])(param, values);
@@ -1173,7 +1141,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListenerfv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListenerfv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] float* values)
+		public static void GetListenerfv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] float* values)
 		{
 			GetListenerfvNative(param, values);
 		}
@@ -1183,7 +1151,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListenerfv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListenerfv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float values)
+		public static void GetListenerfv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float values)
 		{
 			fixed (float* pvalues = &values)
 			{
@@ -1197,7 +1165,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetListeneri")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetListeneriNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] int* value)
+		internal static void GetListeneriNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int*, void>)funcTable[29])(param, value);
@@ -1211,7 +1179,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListeneri")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListeneri([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] int* value)
+		public static void GetListeneri([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] int* value)
 		{
 			GetListeneriNative(param, value);
 		}
@@ -1221,7 +1189,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListeneri")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListeneri([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] ref int value)
+		public static void GetListeneri([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] ref int value)
 		{
 			fixed (int* pvalue = &value)
 			{
@@ -1235,7 +1203,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetListener3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetListener3INative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		internal static void GetListener3INative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int*, int*, int*, void>)funcTable[30])(param, value1, value2, value3);
@@ -1249,7 +1217,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			GetListener3INative(param, value1, value2, value3);
 		}
@@ -1259,7 +1227,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			fixed (int* pvalue1 = &value1)
 			{
@@ -1272,7 +1240,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			fixed (int* pvalue2 = &value2)
 			{
@@ -1285,7 +1253,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			fixed (int* pvalue1 = &value1)
 			{
@@ -1301,7 +1269,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] ref int value3)
+		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] ref int value3)
 		{
 			fixed (int* pvalue3 = &value3)
 			{
@@ -1314,7 +1282,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] ref int value3)
+		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] ref int value3)
 		{
 			fixed (int* pvalue1 = &value1)
 			{
@@ -1330,7 +1298,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] ref int value3)
+		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] ref int value3)
 		{
 			fixed (int* pvalue2 = &value2)
 			{
@@ -1346,7 +1314,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListener3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] ref int value3)
+		public static void GetListener3I([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] ref int value3)
 		{
 			fixed (int* pvalue1 = &value1)
 			{
@@ -1366,7 +1334,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetListeneriv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetListenerivNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] int* values)
+		internal static void GetListenerivNative([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] int* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int*, void>)funcTable[31])(param, values);
@@ -1380,7 +1348,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListeneriv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListeneriv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] int* values)
+		public static void GetListeneriv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] int* values)
 		{
 			GetListenerivNative(param, values);
 		}
@@ -1390,7 +1358,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetListeneriv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetListeneriv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] ref int values)
+		public static void GetListeneriv([NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] ref int values)
 		{
 			fixed (int* pvalues = &values)
 			{
@@ -1404,7 +1372,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGenSources")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenSourcesNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint*")] uint* sources)
+		internal static void GenSourcesNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint *")] uint* sources)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[32])(n, sources);
@@ -1418,7 +1386,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGenSources")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GenSources([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint*")] uint* sources)
+		public static void GenSources([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint *")] uint* sources)
 		{
 			GenSourcesNative(n, sources);
 		}
@@ -1428,7 +1396,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGenSources")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GenSources([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint*")] ref uint sources)
+		public static void GenSources([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint *")] ref uint sources)
 		{
 			fixed (uint* psources = &sources)
 			{
@@ -1442,7 +1410,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alDeleteSources")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteSourcesNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources)
+		internal static void DeleteSourcesNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[33])(n, sources);
@@ -1456,7 +1424,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alDeleteSources")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void DeleteSources([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources)
+		public static void DeleteSources([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources)
 		{
 			DeleteSourcesNative(n, sources);
 		}
@@ -1466,7 +1434,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alDeleteSources")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void DeleteSources([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] ref uint sources)
+		public static void DeleteSources([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] ref uint sources)
 		{
 			fixed (uint* psources = &sources)
 			{
@@ -1556,7 +1524,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alSourcefv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SourcefvNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] float* values)
+		internal static void SourcefvNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] float* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[37])(source, param, values);
@@ -1570,7 +1538,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourcefv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void Sourcefv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] float* values)
+		public static void Sourcefv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] float* values)
 		{
 			SourcefvNative(source, param, values);
 		}
@@ -1580,7 +1548,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourcefv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void Sourcefv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] ref float values)
+		public static void Sourcefv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] ref float values)
 		{
 			fixed (float* pvalues = &values)
 			{
@@ -1644,7 +1612,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alSourceiv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SourceivNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] int* values)
+		internal static void SourceivNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] int* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, void>)funcTable[40])(source, param, values);
@@ -1658,7 +1626,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourceiv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void Sourceiv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] int* values)
+		public static void Sourceiv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] int* values)
 		{
 			SourceivNative(source, param, values);
 		}
@@ -1668,7 +1636,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourceiv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void Sourceiv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] ref int values)
+		public static void Sourceiv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] ref int values)
 		{
 			fixed (int* pvalues = &values)
 			{
@@ -1682,7 +1650,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetSourcef")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSourcefNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value)
+		internal static void GetSourcefNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[41])(source, param, value);
@@ -1696,7 +1664,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSourcef")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSourcef([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value)
+		public static void GetSourcef([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value)
 		{
 			GetSourcefNative(source, param, value);
 		}
@@ -1706,7 +1674,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSourcef")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSourcef([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value)
+		public static void GetSourcef([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value)
 		{
 			fixed (float* pvalue = &value)
 			{
@@ -1720,7 +1688,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetSource3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSource3FNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		internal static void GetSource3FNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, float*, float*, void>)funcTable[42])(source, param, value1, value2, value3);
@@ -1734,7 +1702,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			GetSource3FNative(source, param, value1, value2, value3);
 		}
@@ -1744,7 +1712,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			fixed (float* pvalue1 = &value1)
 			{
@@ -1757,7 +1725,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			fixed (float* pvalue2 = &value2)
 			{
@@ -1770,7 +1738,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			fixed (float* pvalue1 = &value1)
 			{
@@ -1786,7 +1754,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value3)
+		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value3)
 		{
 			fixed (float* pvalue3 = &value3)
 			{
@@ -1799,7 +1767,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value3)
+		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value3)
 		{
 			fixed (float* pvalue1 = &value1)
 			{
@@ -1815,7 +1783,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value3)
+		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value3)
 		{
 			fixed (float* pvalue2 = &value2)
 			{
@@ -1831,7 +1799,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value3)
+		public static void GetSource3F([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value3)
 		{
 			fixed (float* pvalue1 = &value1)
 			{
@@ -1851,7 +1819,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetSourcefv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSourcefvNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] float* values)
+		internal static void GetSourcefvNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] float* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[43])(source, param, values);
@@ -1865,7 +1833,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSourcefv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSourcefv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] float* values)
+		public static void GetSourcefv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] float* values)
 		{
 			GetSourcefvNative(source, param, values);
 		}
@@ -1875,7 +1843,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSourcefv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSourcefv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float values)
+		public static void GetSourcefv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float values)
 		{
 			fixed (float* pvalues = &values)
 			{
@@ -1889,7 +1857,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetSourcei")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSourceiNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] int* value)
+		internal static void GetSourceiNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, void>)funcTable[44])(source, param, value);
@@ -1903,7 +1871,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSourcei")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSourcei([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] int* value)
+		public static void GetSourcei([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] int* value)
 		{
 			GetSourceiNative(source, param, value);
 		}
@@ -1913,7 +1881,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSourcei")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSourcei([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] ref int value)
+		public static void GetSourcei([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] ref int value)
 		{
 			fixed (int* pvalue = &value)
 			{
@@ -1927,7 +1895,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetSource3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSource3INative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		internal static void GetSource3INative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, int*, int*, void>)funcTable[45])(source, param, value1, value2, value3);
@@ -1941,7 +1909,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			GetSource3INative(source, param, value1, value2, value3);
 		}
@@ -1951,7 +1919,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			fixed (int* pvalue1 = &value1)
 			{
@@ -1964,7 +1932,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			fixed (int* pvalue2 = &value2)
 			{
@@ -1977,7 +1945,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			fixed (int* pvalue1 = &value1)
 			{
@@ -1993,7 +1961,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] ref int value3)
+		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] ref int value3)
 		{
 			fixed (int* pvalue3 = &value3)
 			{
@@ -2006,7 +1974,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] ref int value3)
+		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] ref int value3)
 		{
 			fixed (int* pvalue1 = &value1)
 			{
@@ -2022,7 +1990,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] ref int value3)
+		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] ref int value3)
 		{
 			fixed (int* pvalue2 = &value2)
 			{
@@ -2038,7 +2006,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSource3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] ref int value3)
+		public static void GetSource3I([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] ref int value3)
 		{
 			fixed (int* pvalue1 = &value1)
 			{
@@ -2058,7 +2026,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetSourceiv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSourceivNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] int* values)
+		internal static void GetSourceivNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] int* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, void>)funcTable[46])(source, param, values);
@@ -2072,7 +2040,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSourceiv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSourceiv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] int* values)
+		public static void GetSourceiv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] int* values)
 		{
 			GetSourceivNative(source, param, values);
 		}
@@ -2082,7 +2050,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetSourceiv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetSourceiv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] ref int values)
+		public static void GetSourceiv([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] ref int values)
 		{
 			fixed (int* pvalues = &values)
 			{
@@ -2196,7 +2164,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alSourcePlayv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SourcePlayvNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources)
+		internal static void SourcePlayvNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[51])(n, sources);
@@ -2210,7 +2178,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourcePlayv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SourcePlayv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources)
+		public static void SourcePlayv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources)
 		{
 			SourcePlayvNative(n, sources);
 		}
@@ -2220,7 +2188,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourcePlayv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SourcePlayv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] ref uint sources)
+		public static void SourcePlayv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] ref uint sources)
 		{
 			fixed (uint* psources = &sources)
 			{
@@ -2234,7 +2202,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alSourceStopv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SourceStopvNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources)
+		internal static void SourceStopvNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[52])(n, sources);
@@ -2248,7 +2216,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourceStopv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SourceStopv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources)
+		public static void SourceStopv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources)
 		{
 			SourceStopvNative(n, sources);
 		}
@@ -2258,7 +2226,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourceStopv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SourceStopv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] ref uint sources)
+		public static void SourceStopv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] ref uint sources)
 		{
 			fixed (uint* psources = &sources)
 			{
@@ -2272,7 +2240,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alSourceRewindv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SourceRewindvNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources)
+		internal static void SourceRewindvNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[53])(n, sources);
@@ -2286,7 +2254,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourceRewindv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SourceRewindv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources)
+		public static void SourceRewindv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources)
 		{
 			SourceRewindvNative(n, sources);
 		}
@@ -2296,7 +2264,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourceRewindv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SourceRewindv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] ref uint sources)
+		public static void SourceRewindv([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] ref uint sources)
 		{
 			fixed (uint* psources = &sources)
 			{
@@ -2310,7 +2278,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alSourcePausev")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SourcePausevNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources)
+		internal static void SourcePausevNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[54])(n, sources);
@@ -2324,7 +2292,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourcePausev")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SourcePausev([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* sources)
+		public static void SourcePausev([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* sources)
 		{
 			SourcePausevNative(n, sources);
 		}
@@ -2334,7 +2302,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourcePausev")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SourcePausev([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "const ALuint*")] ref uint sources)
+		public static void SourcePausev([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "sources")] [NativeName(NativeNameType.Type, "ALuint const *")] ref uint sources)
 		{
 			fixed (uint* psources = &sources)
 			{
@@ -2348,7 +2316,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alSourceQueueBuffers")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SourceQueueBuffersNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* buffers)
+		internal static void SourceQueueBuffersNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* buffers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, uint*, void>)funcTable[55])(source, nb, buffers);
@@ -2362,7 +2330,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourceQueueBuffers")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SourceQueueBuffers([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* buffers)
+		public static void SourceQueueBuffers([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* buffers)
 		{
 			SourceQueueBuffersNative(source, nb, buffers);
 		}
@@ -2372,7 +2340,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourceQueueBuffers")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SourceQueueBuffers([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "const ALuint*")] ref uint buffers)
+		public static void SourceQueueBuffers([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint const *")] ref uint buffers)
 		{
 			fixed (uint* pbuffers = &buffers)
 			{
@@ -2386,7 +2354,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alSourceUnqueueBuffers")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SourceUnqueueBuffersNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint*")] uint* buffers)
+		internal static void SourceUnqueueBuffersNative([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint *")] uint* buffers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, uint*, void>)funcTable[56])(source, nb, buffers);
@@ -2400,7 +2368,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourceUnqueueBuffers")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SourceUnqueueBuffers([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint*")] uint* buffers)
+		public static void SourceUnqueueBuffers([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint *")] uint* buffers)
 		{
 			SourceUnqueueBuffersNative(source, nb, buffers);
 		}
@@ -2410,7 +2378,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alSourceUnqueueBuffers")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SourceUnqueueBuffers([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint*")] ref uint buffers)
+		public static void SourceUnqueueBuffers([NativeName(NativeNameType.Param, "source")] [NativeName(NativeNameType.Type, "ALuint")] uint source, [NativeName(NativeNameType.Param, "nb")] [NativeName(NativeNameType.Type, "ALsizei")] int nb, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint *")] ref uint buffers)
 		{
 			fixed (uint* pbuffers = &buffers)
 			{
@@ -2424,7 +2392,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGenBuffers")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenBuffersNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint*")] uint* buffers)
+		internal static void GenBuffersNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint *")] uint* buffers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[57])(n, buffers);
@@ -2438,7 +2406,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGenBuffers")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GenBuffers([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint*")] uint* buffers)
+		public static void GenBuffers([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint *")] uint* buffers)
 		{
 			GenBuffersNative(n, buffers);
 		}
@@ -2448,7 +2416,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGenBuffers")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GenBuffers([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint*")] ref uint buffers)
+		public static void GenBuffers([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint *")] ref uint buffers)
 		{
 			fixed (uint* pbuffers = &buffers)
 			{
@@ -2462,7 +2430,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alDeleteBuffers")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteBuffersNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* buffers)
+		internal static void DeleteBuffersNative([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* buffers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[58])(n, buffers);
@@ -2476,7 +2444,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alDeleteBuffers")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void DeleteBuffers([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "const ALuint*")] uint* buffers)
+		public static void DeleteBuffers([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint const *")] uint* buffers)
 		{
 			DeleteBuffersNative(n, buffers);
 		}
@@ -2486,7 +2454,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alDeleteBuffers")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void DeleteBuffers([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "const ALuint*")] ref uint buffers)
+		public static void DeleteBuffers([NativeName(NativeNameType.Param, "n")] [NativeName(NativeNameType.Type, "ALsizei")] int n, [NativeName(NativeNameType.Param, "buffers")] [NativeName(NativeNameType.Type, "ALuint const *")] ref uint buffers)
 		{
 			fixed (uint* pbuffers = &buffers)
 			{
@@ -2527,7 +2495,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alBufferData")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferDataNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALenum")] int format, [NativeName(NativeNameType.Param, "data")] [NativeName(NativeNameType.Type, "const ALvoid*")] void* data, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALsizei")] int size, [NativeName(NativeNameType.Param, "samplerate")] [NativeName(NativeNameType.Type, "ALsizei")] int samplerate)
+		internal static void BufferDataNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALenum")] int format, [NativeName(NativeNameType.Param, "data")] [NativeName(NativeNameType.Type, "ALvoid const *")] void* data, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALsizei")] int size, [NativeName(NativeNameType.Param, "samplerate")] [NativeName(NativeNameType.Type, "ALsizei")] int samplerate)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, void*, int, int, void>)funcTable[60])(buffer, format, data, size, samplerate);
@@ -2542,7 +2510,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alBufferData")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void BufferData([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALenum")] int format, [NativeName(NativeNameType.Param, "data")] [NativeName(NativeNameType.Type, "const ALvoid*")] void* data, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALsizei")] int size, [NativeName(NativeNameType.Param, "samplerate")] [NativeName(NativeNameType.Type, "ALsizei")] int samplerate)
+		public static void BufferData([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALenum")] int format, [NativeName(NativeNameType.Param, "data")] [NativeName(NativeNameType.Type, "ALvoid const *")] void* data, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALsizei")] int size, [NativeName(NativeNameType.Param, "samplerate")] [NativeName(NativeNameType.Type, "ALsizei")] int samplerate)
 		{
 			BufferDataNative(buffer, format, data, size, samplerate);
 		}
@@ -2603,7 +2571,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alBufferfv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferfvNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] float* values)
+		internal static void BufferfvNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] float* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[63])(buffer, param, values);
@@ -2617,7 +2585,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alBufferfv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void Bufferfv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] float* values)
+		public static void Bufferfv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] float* values)
 		{
 			BufferfvNative(buffer, param, values);
 		}
@@ -2627,7 +2595,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alBufferfv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void Bufferfv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALfloat*")] ref float values)
+		public static void Bufferfv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat const *")] ref float values)
 		{
 			fixed (float* pvalues = &values)
 			{
@@ -2691,7 +2659,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alBufferiv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferivNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] int* values)
+		internal static void BufferivNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] int* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, void>)funcTable[66])(buffer, param, values);
@@ -2705,7 +2673,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alBufferiv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void Bufferiv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] int* values)
+		public static void Bufferiv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] int* values)
 		{
 			BufferivNative(buffer, param, values);
 		}
@@ -2715,7 +2683,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alBufferiv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void Bufferiv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "const ALint*")] ref int values)
+		public static void Bufferiv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint const *")] ref int values)
 		{
 			fixed (int* pvalues = &values)
 			{
@@ -2729,7 +2697,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetBufferf")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBufferfNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value)
+		internal static void GetBufferfNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[67])(buffer, param, value);
@@ -2743,7 +2711,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBufferf")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBufferf([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value)
+		public static void GetBufferf([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value)
 		{
 			GetBufferfNative(buffer, param, value);
 		}
@@ -2753,7 +2721,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBufferf")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBufferf([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value)
+		public static void GetBufferf([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value)
 		{
 			fixed (float* pvalue = &value)
 			{
@@ -2767,7 +2735,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetBuffer3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBuffer3FNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		internal static void GetBuffer3FNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, float*, float*, void>)funcTable[68])(buffer, param, value1, value2, value3);
@@ -2781,7 +2749,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			GetBuffer3FNative(buffer, param, value1, value2, value3);
 		}
@@ -2791,7 +2759,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			fixed (float* pvalue1 = &value1)
 			{
@@ -2804,7 +2772,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			fixed (float* pvalue2 = &value2)
 			{
@@ -2817,7 +2785,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value3)
+		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value3)
 		{
 			fixed (float* pvalue1 = &value1)
 			{
@@ -2833,7 +2801,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value3)
+		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value3)
 		{
 			fixed (float* pvalue3 = &value3)
 			{
@@ -2846,7 +2814,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value3)
+		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value3)
 		{
 			fixed (float* pvalue1 = &value1)
 			{
@@ -2862,7 +2830,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value3)
+		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] float* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value3)
 		{
 			fixed (float* pvalue2 = &value2)
 			{
@@ -2878,7 +2846,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3f")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float value3)
+		public static void GetBuffer3F([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float value3)
 		{
 			fixed (float* pvalue1 = &value1)
 			{
@@ -2898,7 +2866,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetBufferfv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBufferfvNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] float* values)
+		internal static void GetBufferfvNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] float* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[69])(buffer, param, values);
@@ -2912,7 +2880,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBufferfv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBufferfv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] float* values)
+		public static void GetBufferfv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] float* values)
 		{
 			GetBufferfvNative(buffer, param, values);
 		}
@@ -2922,7 +2890,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBufferfv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBufferfv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat*")] ref float values)
+		public static void GetBufferfv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALfloat *")] ref float values)
 		{
 			fixed (float* pvalues = &values)
 			{
@@ -2936,7 +2904,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetBufferi")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBufferiNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] int* value)
+		internal static void GetBufferiNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, void>)funcTable[70])(buffer, param, value);
@@ -2950,7 +2918,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBufferi")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBufferi([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] int* value)
+		public static void GetBufferi([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] int* value)
 		{
 			GetBufferiNative(buffer, param, value);
 		}
@@ -2960,7 +2928,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBufferi")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBufferi([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint*")] ref int value)
+		public static void GetBufferi([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value")] [NativeName(NativeNameType.Type, "ALint *")] ref int value)
 		{
 			fixed (int* pvalue = &value)
 			{
@@ -2974,7 +2942,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetBuffer3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBuffer3INative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		internal static void GetBuffer3INative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, int*, int*, void>)funcTable[71])(buffer, param, value1, value2, value3);
@@ -2988,7 +2956,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			GetBuffer3INative(buffer, param, value1, value2, value3);
 		}
@@ -2998,7 +2966,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			fixed (int* pvalue1 = &value1)
 			{
@@ -3011,7 +2979,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			fixed (int* pvalue2 = &value2)
 			{
@@ -3024,7 +2992,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] int* value3)
+		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] int* value3)
 		{
 			fixed (int* pvalue1 = &value1)
 			{
@@ -3040,7 +3008,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] ref int value3)
+		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] ref int value3)
 		{
 			fixed (int* pvalue3 = &value3)
 			{
@@ -3053,7 +3021,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] ref int value3)
+		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] int* value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] ref int value3)
 		{
 			fixed (int* pvalue1 = &value1)
 			{
@@ -3069,7 +3037,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] ref int value3)
+		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] int* value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] ref int value3)
 		{
 			fixed (int* pvalue2 = &value2)
 			{
@@ -3085,7 +3053,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBuffer3i")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint*")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint*")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint*")] ref int value3)
+		public static void GetBuffer3I([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "value1")] [NativeName(NativeNameType.Type, "ALint *")] ref int value1, [NativeName(NativeNameType.Param, "value2")] [NativeName(NativeNameType.Type, "ALint *")] ref int value2, [NativeName(NativeNameType.Param, "value3")] [NativeName(NativeNameType.Type, "ALint *")] ref int value3)
 		{
 			fixed (int* pvalue1 = &value1)
 			{
@@ -3105,7 +3073,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alGetBufferiv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBufferivNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] int* values)
+		internal static void GetBufferivNative([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] int* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, void>)funcTable[72])(buffer, param, values);
@@ -3119,7 +3087,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBufferiv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBufferiv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] int* values)
+		public static void GetBufferiv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] int* values)
 		{
 			GetBufferivNative(buffer, param, values);
 		}
@@ -3129,7 +3097,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alGetBufferiv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetBufferiv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint*")] ref int values)
+		public static void GetBufferiv([NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALuint")] uint buffer, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALenum")] int param, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALint *")] ref int values)
 		{
 			fixed (int* pvalues = &values)
 			{
@@ -3141,9 +3109,9 @@ namespace Hexa.NET.OpenAL
 		/// Create and attach a context to the given device. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCreateContext")]
-		[return: NativeName(NativeNameType.Type, "ALCcontext*")]
+		[return: NativeName(NativeNameType.Type, "ALCcontext *")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static ALCcontext* CreateContextNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] int* attrlist)
+		internal static ALCcontext* CreateContextNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "ALCint const *")] int* attrlist)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<ALCdevice*, int*, ALCcontext*>)funcTable[73])(device, attrlist);
@@ -3156,8 +3124,8 @@ namespace Hexa.NET.OpenAL
 		/// Create and attach a context to the given device. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCreateContext")]
-		[return: NativeName(NativeNameType.Type, "ALCcontext*")]
-		public static ALCcontextPtr CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] int* attrlist)
+		[return: NativeName(NativeNameType.Type, "ALCcontext *")]
+		public static ALCcontextPtr CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "ALCint const *")] int* attrlist)
 		{
 			ALCcontextPtr ret = CreateContextNative(device, attrlist);
 			return ret;
@@ -3167,8 +3135,8 @@ namespace Hexa.NET.OpenAL
 		/// Create and attach a context to the given device. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCreateContext")]
-		[return: NativeName(NativeNameType.Type, "ALCcontext*")]
-		public static ALCcontextPtr CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] int* attrlist)
+		[return: NativeName(NativeNameType.Type, "ALCcontext *")]
+		public static ALCcontextPtr CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "ALCint const *")] int* attrlist)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -3181,8 +3149,8 @@ namespace Hexa.NET.OpenAL
 		/// Create and attach a context to the given device. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCreateContext")]
-		[return: NativeName(NativeNameType.Type, "ALCcontext*")]
-		public static ALCcontextPtr CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] ref int attrlist)
+		[return: NativeName(NativeNameType.Type, "ALCcontext *")]
+		public static ALCcontextPtr CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "ALCint const *")] ref int attrlist)
 		{
 			fixed (int* pattrlist = &attrlist)
 			{
@@ -3195,8 +3163,8 @@ namespace Hexa.NET.OpenAL
 		/// Create and attach a context to the given device. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCreateContext")]
-		[return: NativeName(NativeNameType.Type, "ALCcontext*")]
-		public static ALCcontextPtr CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "const ALCint*")] ref int attrlist)
+		[return: NativeName(NativeNameType.Type, "ALCcontext *")]
+		public static ALCcontextPtr CreateContext([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "attrlist")] [NativeName(NativeNameType.Type, "ALCint const *")] ref int attrlist)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -3215,7 +3183,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alcMakeContextCurrent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte MakeContextCurrentNative([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context)
+		internal static byte MakeContextCurrentNative([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontext* context)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<ALCcontext*, byte>)funcTable[74])(context);
@@ -3230,7 +3198,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcMakeContextCurrent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte MakeContextCurrent([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontextPtr context)
+		public static byte MakeContextCurrent([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontextPtr context)
 		{
 			byte ret = MakeContextCurrentNative(context);
 			return ret;
@@ -3242,7 +3210,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcMakeContextCurrent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte MakeContextCurrent([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ref ALCcontext context)
+		public static byte MakeContextCurrent([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ref ALCcontext context)
 		{
 			fixed (ALCcontext* pcontext = &context)
 			{
@@ -3257,7 +3225,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alcProcessContext")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProcessContextNative([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context)
+		internal static void ProcessContextNative([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontext* context)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ALCcontext*, void>)funcTable[75])(context);
@@ -3271,7 +3239,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcProcessContext")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void ProcessContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontextPtr context)
+		public static void ProcessContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontextPtr context)
 		{
 			ProcessContextNative(context);
 		}
@@ -3281,7 +3249,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcProcessContext")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void ProcessContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ref ALCcontext context)
+		public static void ProcessContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ref ALCcontext context)
 		{
 			fixed (ALCcontext* pcontext = &context)
 			{
@@ -3295,7 +3263,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alcSuspendContext")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SuspendContextNative([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context)
+		internal static void SuspendContextNative([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontext* context)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ALCcontext*, void>)funcTable[76])(context);
@@ -3309,7 +3277,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcSuspendContext")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SuspendContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontextPtr context)
+		public static void SuspendContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontextPtr context)
 		{
 			SuspendContextNative(context);
 		}
@@ -3319,7 +3287,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcSuspendContext")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void SuspendContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ref ALCcontext context)
+		public static void SuspendContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ref ALCcontext context)
 		{
 			fixed (ALCcontext* pcontext = &context)
 			{
@@ -3333,7 +3301,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alcDestroyContext")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DestroyContextNative([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context)
+		internal static void DestroyContextNative([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontext* context)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ALCcontext*, void>)funcTable[77])(context);
@@ -3347,7 +3315,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcDestroyContext")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void DestroyContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontextPtr context)
+		public static void DestroyContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontextPtr context)
 		{
 			DestroyContextNative(context);
 		}
@@ -3357,7 +3325,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcDestroyContext")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void DestroyContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ref ALCcontext context)
+		public static void DestroyContext([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ref ALCcontext context)
 		{
 			fixed (ALCcontext* pcontext = &context)
 			{
@@ -3369,7 +3337,7 @@ namespace Hexa.NET.OpenAL
 		/// Returns the currently active context. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetCurrentContext")]
-		[return: NativeName(NativeNameType.Type, "ALCcontext*")]
+		[return: NativeName(NativeNameType.Type, "ALCcontext *")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static ALCcontext* GetCurrentContextNative()
 		{
@@ -3384,7 +3352,7 @@ namespace Hexa.NET.OpenAL
 		/// Returns the currently active context. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetCurrentContext")]
-		[return: NativeName(NativeNameType.Type, "ALCcontext*")]
+		[return: NativeName(NativeNameType.Type, "ALCcontext *")]
 		public static ALCcontextPtr GetCurrentContext()
 		{
 			ALCcontextPtr ret = GetCurrentContextNative();
@@ -3395,9 +3363,9 @@ namespace Hexa.NET.OpenAL
 		/// Returns the device that a particular context is attached to. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetContextsDevice")]
-		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
+		[return: NativeName(NativeNameType.Type, "ALCdevice *")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static ALCdevice* GetContextsDeviceNative([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontext* context)
+		internal static ALCdevice* GetContextsDeviceNative([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontext* context)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<ALCcontext*, ALCdevice*>)funcTable[79])(context);
@@ -3410,8 +3378,8 @@ namespace Hexa.NET.OpenAL
 		/// Returns the device that a particular context is attached to. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetContextsDevice")]
-		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevicePtr GetContextsDevice([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ALCcontextPtr context)
+		[return: NativeName(NativeNameType.Type, "ALCdevice *")]
+		public static ALCdevicePtr GetContextsDevice([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ALCcontextPtr context)
 		{
 			ALCdevicePtr ret = GetContextsDeviceNative(context);
 			return ret;
@@ -3421,8 +3389,8 @@ namespace Hexa.NET.OpenAL
 		/// Returns the device that a particular context is attached to. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetContextsDevice")]
-		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevicePtr GetContextsDevice([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext*")] ref ALCcontext context)
+		[return: NativeName(NativeNameType.Type, "ALCdevice *")]
+		public static ALCdevicePtr GetContextsDevice([NativeName(NativeNameType.Param, "context")] [NativeName(NativeNameType.Type, "ALCcontext *")] ref ALCcontext context)
 		{
 			fixed (ALCcontext* pcontext = &context)
 			{
@@ -3435,9 +3403,9 @@ namespace Hexa.NET.OpenAL
 		/// Opens the named playback device. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcOpenDevice")]
-		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
+		[return: NativeName(NativeNameType.Type, "ALCdevice *")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static ALCdevice* OpenDeviceNative([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* devicename)
+		internal static ALCdevice* OpenDeviceNative([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* devicename)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<byte*, ALCdevice*>)funcTable[80])(devicename);
@@ -3450,8 +3418,8 @@ namespace Hexa.NET.OpenAL
 		/// Opens the named playback device. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcOpenDevice")]
-		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevicePtr OpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* devicename)
+		[return: NativeName(NativeNameType.Type, "ALCdevice *")]
+		public static ALCdevicePtr OpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* devicename)
 		{
 			ALCdevicePtr ret = OpenDeviceNative(devicename);
 			return ret;
@@ -3461,8 +3429,8 @@ namespace Hexa.NET.OpenAL
 		/// Opens the named playback device. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcOpenDevice")]
-		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevicePtr OpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte devicename)
+		[return: NativeName(NativeNameType.Type, "ALCdevice *")]
+		public static ALCdevicePtr OpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "ALCchar const *")] ref byte devicename)
 		{
 			fixed (byte* pdevicename = &devicename)
 			{
@@ -3475,8 +3443,8 @@ namespace Hexa.NET.OpenAL
 		/// Opens the named playback device. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcOpenDevice")]
-		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevicePtr OpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> devicename)
+		[return: NativeName(NativeNameType.Type, "ALCdevice *")]
+		public static ALCdevicePtr OpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "ALCchar const *")] ReadOnlySpan<byte> devicename)
 		{
 			fixed (byte* pdevicename = devicename)
 			{
@@ -3489,8 +3457,8 @@ namespace Hexa.NET.OpenAL
 		/// Opens the named playback device. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcOpenDevice")]
-		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevicePtr OpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] string devicename)
+		[return: NativeName(NativeNameType.Type, "ALCdevice *")]
+		public static ALCdevicePtr OpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "ALCchar const *")] string devicename)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -3523,7 +3491,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alcCloseDevice")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte CloseDeviceNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device)
+		internal static byte CloseDeviceNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<ALCdevice*, byte>)funcTable[81])(device);
@@ -3537,7 +3505,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCloseDevice")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte CloseDevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device)
+		public static byte CloseDevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device)
 		{
 			byte ret = CloseDeviceNative(device);
 			return ret;
@@ -3548,7 +3516,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCloseDevice")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte CloseDevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device)
+		public static byte CloseDevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -3564,7 +3532,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alcGetError")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetErrorNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device)
+		internal static int GetErrorNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<ALCdevice*, int>)funcTable[82])(device);
@@ -3579,7 +3547,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetError")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
-		public static int GetError([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device)
+		public static int GetError([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device)
 		{
 			int ret = GetErrorNative(device);
 			return ret;
@@ -3591,7 +3559,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetError")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
-		public static int GetError([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device)
+		public static int GetError([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -3606,7 +3574,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsExtensionPresentNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* extname)
+		internal static byte IsExtensionPresentNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* extname)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<ALCdevice*, byte*, byte>)funcTable[83])(device, extname);
@@ -3620,7 +3588,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* extname)
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* extname)
 		{
 			byte ret = IsExtensionPresentNative(device, extname);
 			return ret;
@@ -3631,7 +3599,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* extname)
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* extname)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -3645,7 +3613,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte extname)
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALCchar const *")] ref byte extname)
 		{
 			fixed (byte* pextname = &extname)
 			{
@@ -3659,7 +3627,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> extname)
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALCchar const *")] ReadOnlySpan<byte> extname)
 		{
 			fixed (byte* pextname = extname)
 			{
@@ -3673,7 +3641,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] string extname)
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALCchar const *")] string extname)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -3705,7 +3673,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte extname)
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALCchar const *")] ref byte extname)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -3722,7 +3690,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> extname)
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALCchar const *")] ReadOnlySpan<byte> extname)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -3739,7 +3707,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcIsExtensionPresent")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "const ALCchar*")] string extname)
+		public static byte IsExtensionPresent([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "extname")] [NativeName(NativeNameType.Type, "ALCchar const *")] string extname)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -3774,9 +3742,9 @@ namespace Hexa.NET.OpenAL
 		/// specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
-		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
+		[return: NativeName(NativeNameType.Type, "ALCvoid *")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void* GetProcAddressNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* funcname)
+		internal static void* GetProcAddressNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* funcname)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<ALCdevice*, byte*, void*>)funcTable[84])(device, funcname);
@@ -3790,8 +3758,8 @@ namespace Hexa.NET.OpenAL
 		/// specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
-		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
-		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* funcname)
+		[return: NativeName(NativeNameType.Type, "ALCvoid *")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* funcname)
 		{
 			void* ret = GetProcAddressNative(device, funcname);
 			return ret;
@@ -3802,8 +3770,8 @@ namespace Hexa.NET.OpenAL
 		/// specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
-		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
-		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* funcname)
+		[return: NativeName(NativeNameType.Type, "ALCvoid *")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* funcname)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -3817,8 +3785,8 @@ namespace Hexa.NET.OpenAL
 		/// specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
-		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
-		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte funcname)
+		[return: NativeName(NativeNameType.Type, "ALCvoid *")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "ALCchar const *")] ref byte funcname)
 		{
 			fixed (byte* pfuncname = &funcname)
 			{
@@ -3832,8 +3800,8 @@ namespace Hexa.NET.OpenAL
 		/// specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
-		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
-		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> funcname)
+		[return: NativeName(NativeNameType.Type, "ALCvoid *")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "ALCchar const *")] ReadOnlySpan<byte> funcname)
 		{
 			fixed (byte* pfuncname = funcname)
 			{
@@ -3847,8 +3815,8 @@ namespace Hexa.NET.OpenAL
 		/// specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
-		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
-		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] string funcname)
+		[return: NativeName(NativeNameType.Type, "ALCvoid *")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "ALCchar const *")] string funcname)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -3880,8 +3848,8 @@ namespace Hexa.NET.OpenAL
 		/// specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
-		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
-		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte funcname)
+		[return: NativeName(NativeNameType.Type, "ALCvoid *")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "ALCchar const *")] ref byte funcname)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -3898,8 +3866,8 @@ namespace Hexa.NET.OpenAL
 		/// specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
-		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
-		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> funcname)
+		[return: NativeName(NativeNameType.Type, "ALCvoid *")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "ALCchar const *")] ReadOnlySpan<byte> funcname)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -3916,8 +3884,8 @@ namespace Hexa.NET.OpenAL
 		/// specific.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetProcAddress")]
-		[return: NativeName(NativeNameType.Type, "ALCvoid*")]
-		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "const ALCchar*")] string funcname)
+		[return: NativeName(NativeNameType.Type, "ALCvoid *")]
+		public static void* GetProcAddress([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "funcname")] [NativeName(NativeNameType.Type, "ALCchar const *")] string funcname)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -3953,7 +3921,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetEnumValueNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* enumname)
+		internal static int GetEnumValueNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* enumname)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<ALCdevice*, byte*, int>)funcTable[85])(device, enumname);
@@ -3967,7 +3935,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
-		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* enumname)
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* enumname)
 		{
 			int ret = GetEnumValueNative(device, enumname);
 			return ret;
@@ -3978,7 +3946,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
-		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* enumname)
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* enumname)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -3992,7 +3960,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
-		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte enumname)
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "ALCchar const *")] ref byte enumname)
 		{
 			fixed (byte* penumname = &enumname)
 			{
@@ -4006,7 +3974,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
-		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> enumname)
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "ALCchar const *")] ReadOnlySpan<byte> enumname)
 		{
 			fixed (byte* penumname = enumname)
 			{
@@ -4020,7 +3988,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
-		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] string enumname)
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "ALCchar const *")] string enumname)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -4052,7 +4020,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
-		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte enumname)
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "ALCchar const *")] ref byte enumname)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -4069,7 +4037,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
-		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> enumname)
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "ALCchar const *")] ReadOnlySpan<byte> enumname)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -4086,7 +4054,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetEnumValue")]
 		[return: NativeName(NativeNameType.Type, "ALCenum")]
-		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "const ALCchar*")] string enumname)
+		public static int GetEnumValue([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "enumname")] [NativeName(NativeNameType.Type, "ALCchar const *")] string enumname)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -4120,9 +4088,9 @@ namespace Hexa.NET.OpenAL
 		/// Context state retrieval. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetString")]
-		[return: NativeName(NativeNameType.Type, "const ALCchar*")]
+		[return: NativeName(NativeNameType.Type, "ALCchar const *")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte* GetStringNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param)
+		internal static byte* GetStringNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<ALCdevice*, int, byte*>)funcTable[86])(device, param);
@@ -4135,8 +4103,8 @@ namespace Hexa.NET.OpenAL
 		/// Context state retrieval. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetString")]
-		[return: NativeName(NativeNameType.Type, "const ALCchar*")]
-		public static byte* GetString([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param)
+		[return: NativeName(NativeNameType.Type, "ALCchar const *")]
+		public static byte* GetString([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param)
 		{
 			byte* ret = GetStringNative(device, param);
 			return ret;
@@ -4146,8 +4114,8 @@ namespace Hexa.NET.OpenAL
 		/// Context state retrieval. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetString")]
-		[return: NativeName(NativeNameType.Type, "const ALCchar*")]
-		public static string GetStringS([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param)
+		[return: NativeName(NativeNameType.Type, "ALCchar const *")]
+		public static string GetStringS([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param)
 		{
 			string ret = Utils.DecodeStringUTF8(GetStringNative(device, param));
 			return ret;
@@ -4157,8 +4125,8 @@ namespace Hexa.NET.OpenAL
 		/// Context state retrieval. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetString")]
-		[return: NativeName(NativeNameType.Type, "const ALCchar*")]
-		public static byte* GetString([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param)
+		[return: NativeName(NativeNameType.Type, "ALCchar const *")]
+		public static byte* GetString([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -4171,8 +4139,8 @@ namespace Hexa.NET.OpenAL
 		/// Context state retrieval. <br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetString")]
-		[return: NativeName(NativeNameType.Type, "const ALCchar*")]
-		public static string GetStringS([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param)
+		[return: NativeName(NativeNameType.Type, "ALCchar const *")]
+		public static string GetStringS([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -4187,7 +4155,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alcGetIntegerv")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetIntegervNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint*")] int* values)
+		internal static void GetIntegervNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint *")] int* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ALCdevice*, int, int, int*, void>)funcTable[87])(device, param, size, values);
@@ -4201,7 +4169,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetIntegerv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetIntegerv([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint*")] int* values)
+		public static void GetIntegerv([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint *")] int* values)
 		{
 			GetIntegervNative(device, param, size, values);
 		}
@@ -4211,7 +4179,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetIntegerv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetIntegerv([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint*")] int* values)
+		public static void GetIntegerv([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint *")] int* values)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -4224,7 +4192,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetIntegerv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetIntegerv([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint*")] ref int values)
+		public static void GetIntegerv([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint *")] ref int values)
 		{
 			fixed (int* pvalues = &values)
 			{
@@ -4237,7 +4205,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcGetIntegerv")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void GetIntegerv([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint*")] ref int values)
+		public static void GetIntegerv([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "param")] [NativeName(NativeNameType.Type, "ALCenum")] int param, [NativeName(NativeNameType.Param, "size")] [NativeName(NativeNameType.Type, "ALCsizei")] int size, [NativeName(NativeNameType.Param, "values")] [NativeName(NativeNameType.Type, "ALCint *")] ref int values)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -4253,9 +4221,9 @@ namespace Hexa.NET.OpenAL
 		/// size.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureOpenDevice")]
-		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
+		[return: NativeName(NativeNameType.Type, "ALCdevice *")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static ALCdevice* CaptureOpenDeviceNative([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
+		internal static ALCdevice* CaptureOpenDeviceNative([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<byte*, uint, int, int, ALCdevice*>)funcTable[88])(devicename, frequency, format, buffersize);
@@ -4269,8 +4237,8 @@ namespace Hexa.NET.OpenAL
 		/// size.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureOpenDevice")]
-		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevicePtr CaptureOpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] byte* devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
+		[return: NativeName(NativeNameType.Type, "ALCdevice *")]
+		public static ALCdevicePtr CaptureOpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "ALCchar const *")] byte* devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
 		{
 			ALCdevicePtr ret = CaptureOpenDeviceNative(devicename, frequency, format, buffersize);
 			return ret;
@@ -4281,8 +4249,8 @@ namespace Hexa.NET.OpenAL
 		/// size.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureOpenDevice")]
-		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevicePtr CaptureOpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] ref byte devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
+		[return: NativeName(NativeNameType.Type, "ALCdevice *")]
+		public static ALCdevicePtr CaptureOpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "ALCchar const *")] ref byte devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
 		{
 			fixed (byte* pdevicename = &devicename)
 			{
@@ -4296,8 +4264,8 @@ namespace Hexa.NET.OpenAL
 		/// size.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureOpenDevice")]
-		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevicePtr CaptureOpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] ReadOnlySpan<byte> devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
+		[return: NativeName(NativeNameType.Type, "ALCdevice *")]
+		public static ALCdevicePtr CaptureOpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "ALCchar const *")] ReadOnlySpan<byte> devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
 		{
 			fixed (byte* pdevicename = devicename)
 			{
@@ -4311,8 +4279,8 @@ namespace Hexa.NET.OpenAL
 		/// size.<br/>
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureOpenDevice")]
-		[return: NativeName(NativeNameType.Type, "ALCdevice*")]
-		public static ALCdevicePtr CaptureOpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "const ALCchar*")] string devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
+		[return: NativeName(NativeNameType.Type, "ALCdevice *")]
+		public static ALCdevicePtr CaptureOpenDevice([NativeName(NativeNameType.Param, "devicename")] [NativeName(NativeNameType.Type, "ALCchar const *")] string devicename, [NativeName(NativeNameType.Param, "frequency")] [NativeName(NativeNameType.Type, "ALCuint")] uint frequency, [NativeName(NativeNameType.Param, "format")] [NativeName(NativeNameType.Type, "ALCenum")] int format, [NativeName(NativeNameType.Param, "buffersize")] [NativeName(NativeNameType.Type, "ALCsizei")] int buffersize)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -4345,7 +4313,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alcCaptureCloseDevice")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte CaptureCloseDeviceNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device)
+		internal static byte CaptureCloseDeviceNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<ALCdevice*, byte>)funcTable[89])(device);
@@ -4359,7 +4327,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureCloseDevice")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte CaptureCloseDevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device)
+		public static byte CaptureCloseDevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device)
 		{
 			byte ret = CaptureCloseDeviceNative(device);
 			return ret;
@@ -4370,7 +4338,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureCloseDevice")]
 		[return: NativeName(NativeNameType.Type, "ALCboolean")]
-		public static byte CaptureCloseDevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device)
+		public static byte CaptureCloseDevice([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -4385,7 +4353,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alcCaptureStart")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CaptureStartNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device)
+		internal static void CaptureStartNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ALCdevice*, void>)funcTable[90])(device);
@@ -4399,7 +4367,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureStart")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void CaptureStart([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device)
+		public static void CaptureStart([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device)
 		{
 			CaptureStartNative(device);
 		}
@@ -4409,7 +4377,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureStart")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void CaptureStart([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device)
+		public static void CaptureStart([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -4423,7 +4391,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alcCaptureStop")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CaptureStopNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device)
+		internal static void CaptureStopNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ALCdevice*, void>)funcTable[91])(device);
@@ -4437,7 +4405,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureStop")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void CaptureStop([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device)
+		public static void CaptureStop([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device)
 		{
 			CaptureStopNative(device);
 		}
@@ -4447,7 +4415,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureStop")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void CaptureStop([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device)
+		public static void CaptureStop([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{
@@ -4461,7 +4429,7 @@ namespace Hexa.NET.OpenAL
 		[NativeName(NativeNameType.Func, "alcCaptureSamples")]
 		[return: NativeName(NativeNameType.Type, "void")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CaptureSamplesNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevice* device, [NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALCvoid*")] void* buffer, [NativeName(NativeNameType.Param, "samples")] [NativeName(NativeNameType.Type, "ALCsizei")] int samples)
+		internal static void CaptureSamplesNative([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevice* device, [NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALCvoid *")] void* buffer, [NativeName(NativeNameType.Param, "samples")] [NativeName(NativeNameType.Type, "ALCsizei")] int samples)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ALCdevice*, void*, int, void>)funcTable[92])(device, buffer, samples);
@@ -4475,7 +4443,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureSamples")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void CaptureSamples([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALCvoid*")] void* buffer, [NativeName(NativeNameType.Param, "samples")] [NativeName(NativeNameType.Type, "ALCsizei")] int samples)
+		public static void CaptureSamples([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ALCdevicePtr device, [NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALCvoid *")] void* buffer, [NativeName(NativeNameType.Param, "samples")] [NativeName(NativeNameType.Type, "ALCsizei")] int samples)
 		{
 			CaptureSamplesNative(device, buffer, samples);
 		}
@@ -4485,7 +4453,7 @@ namespace Hexa.NET.OpenAL
 		/// </summary>
 		[NativeName(NativeNameType.Func, "alcCaptureSamples")]
 		[return: NativeName(NativeNameType.Type, "void")]
-		public static void CaptureSamples([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice*")] ref ALCdevice device, [NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALCvoid*")] void* buffer, [NativeName(NativeNameType.Param, "samples")] [NativeName(NativeNameType.Type, "ALCsizei")] int samples)
+		public static void CaptureSamples([NativeName(NativeNameType.Param, "device")] [NativeName(NativeNameType.Type, "ALCdevice *")] ref ALCdevice device, [NativeName(NativeNameType.Param, "buffer")] [NativeName(NativeNameType.Type, "ALCvoid *")] void* buffer, [NativeName(NativeNameType.Param, "samples")] [NativeName(NativeNameType.Type, "ALCsizei")] int samples)
 		{
 			fixed (ALCdevice* pdevice = &device)
 			{

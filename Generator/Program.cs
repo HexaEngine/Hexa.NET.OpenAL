@@ -2,8 +2,9 @@
 using HexaGen;
 using HexaGen.Patching;
 
-CsCodeGeneratorConfig config = CsCodeGeneratorConfig.Load("generator.json");
-CsCodeGenerator generator = new(config);
-generator.PatchEngine.RegisterPrePatch(new NamingPatch(["Alc", "Al"], NamingPatchOptions.None));
-generator.LogToConsole();
-generator.Generate(["include/main.h"], "../../../../Hexa.NET.OpenAL/Generated");
+BatchGenerator batch = new();
+batch.Start()
+    .Setup<CsCodeGenerator>("generator.json")
+    .AddPrePatch(new NamingPatch(["Alc", "Al"], NamingPatchOptions.None))
+    .Generate(["include/main.h"], "../../../../Hexa.NET.OpenAL/Generated", [.. Directory.GetFiles("include")])
+    .Finish();
