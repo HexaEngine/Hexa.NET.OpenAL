@@ -9,7 +9,7 @@ ALCdevicePtr device = OpenAL.OpenDevice();
 
 ALCcontextPtr context = OpenAL.CreateContext(device);
 CheckError(device);
-OpenAL.DistanceModel(OpenAL.AL_INVERSE_DISTANCE_CLAMPED);
+OpenAL.DistanceModel(ALEnum.InverseDistanceClamped);
 CheckError(device);
 
 OpenAL.MakeContextCurrent(context);

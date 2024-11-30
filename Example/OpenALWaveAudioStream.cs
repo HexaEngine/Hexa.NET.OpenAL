@@ -12,9 +12,9 @@
         private readonly byte[] buffer;
         public readonly uint SampleOffset;
         public readonly uint ByteOffset;
-        public readonly int Type;
+        public readonly ALEnum Type;
         public readonly WaveHeader Header;
-        public readonly int Format;
+        public readonly ALFormat Format;
         private int position;
         private bool looping;
         private bool reachedEnd;
@@ -22,7 +22,7 @@
 
         public OpenALWaveAudioStream(Stream stream, int bufferCount = 4, int bufferSize = 65536)
         {
-            Type = OpenAL.AL_STREAMING;
+            Type = ALEnum.Streaming;
             Header = new(stream);
             Format = Header.GetBufferFormat();
             if (Header.AudioFormat != WaveFormatEncoding.Pcm)
@@ -69,10 +69,10 @@
             stream.Read(data);
             fixed (byte* buffer = data)
             {
-                OpenAL.BufferData(buffers[0], Format, buffer, Header.DataSize, Header.SampleRate);
+                OpenAL.BufferData(buffers[0], (ALEnum)Format, buffer, Header.DataSize, Header.SampleRate);
             }
 
-            OpenAL.Sourcei(source, OpenAL.AL_BUFFER, (int)buffers[0]);
+            OpenAL.SetSourceProperty(source, ALEnum.Buffer, (int)buffers[0]);
         }
 
         public void Initialize(uint source)
@@ -105,7 +105,7 @@
                         reachedEnd = true;
                         fixed (byte* pData = buffer)
                         {
-                            OpenAL.BufferData(buffers[i], Format, pData, (int)dataSizeToCopy, Header.SampleRate);
+                            OpenAL.BufferData(buffers[i], (ALEnum)Format, pData, (int)dataSizeToCopy, Header.SampleRate);
                         }
                         return;
                     }
@@ -116,7 +116,7 @@
 
                 fixed (byte* pData = buffer)
                 {
-                    OpenAL.BufferData(buffers[i], Format, pData, bufferSize, Header.SampleRate);
+                    OpenAL.BufferData(buffers[i], (ALEnum)Format, pData, bufferSize, Header.SampleRate);
                 }
                 OpenAL.SourceQueueBuffers(source, 1, &buffers[i]);
             }
@@ -130,7 +130,7 @@
             }
 
             int buffersProcessed;
-            OpenAL.GetSourcei(source, OpenAL.AL_BUFFERS_PROCESSED, &buffersProcessed);
+            OpenAL.GetSourceProperty(source, ALEnum.BuffersProcessed, &buffersProcessed);
 
             if (buffersProcessed <= 0)
             {
@@ -163,7 +163,7 @@
                         reachedEnd = true;
                         fixed (byte* pData = buffer)
                         {
-                            OpenAL.BufferData(bufferId, Format, pData, (int)dataSizeToCopy, Header.SampleRate);
+                            OpenAL.BufferData(bufferId, (ALEnum)Format, pData, (int)dataSizeToCopy, Header.SampleRate);
                         }
                         return;
                     }
@@ -174,7 +174,7 @@
 
                 fixed (byte* pData = buffer)
                 {
-                    OpenAL.BufferData(bufferId, Format, pData, bufferSize, Header.SampleRate);
+                    OpenAL.BufferData(bufferId, (ALEnum)Format, pData, bufferSize, Header.SampleRate);
                 }
                 OpenAL.SourceQueueBuffers(source, 1, &bufferId);
             }
